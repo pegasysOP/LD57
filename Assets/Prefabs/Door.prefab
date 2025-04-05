@@ -123,3 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallsToBeDeleted:
   - {fileID: 0}
+  player: {fileID: 1778439918913356708, guid: 6d96e693a27db7b44a502c79e6f29115, type: 3}
