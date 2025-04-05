@@ -11,6 +11,9 @@ public class CorridorSpawner : MonoBehaviour
     public Vector3 lastPlayerPos;
 
     public int buffer = 10;
+
+    private float corridorCleanupDistance => 3 * corridorLength;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,6 +31,7 @@ public class CorridorSpawner : MonoBehaviour
             doorwayPrefab.transform.position.y,
             GameManager.Instance.playerController.transform.position.z + (corridorLength * buffer)
         );
+
 
         // Store initial player position
         lastPlayerPos = GameManager.Instance.playerController.transform.position;
@@ -50,6 +54,8 @@ public class CorridorSpawner : MonoBehaviour
             playerPos.z + (corridorLength * buffer)
         );
 
+        CleanupOldCorridors(playerPos.z);
+
         lastPlayerPos = playerPos;
 
         // Optional TODO: Remove/destroy corridor segments that are far behind
@@ -60,5 +66,18 @@ public class CorridorSpawner : MonoBehaviour
         GameObject corridor = Instantiate(corridorPrefab, new Vector3(0, 0, zPosition), Quaternion.identity);
         spawnedCorridors.Add(corridor);
         lastZSpawned = zPosition + corridorLength;
+    }
+
+    void CleanupOldCorridors(float playerZ)
+    {
+        for (int i = spawnedCorridors.Count - 1; i >= 0; i--)
+        {
+            GameObject corridor = spawnedCorridors[i];
+            if (playerZ - corridor.transform.position.z > corridorCleanupDistance)
+            {
+                Destroy(corridor);
+                spawnedCorridors.RemoveAt(i);
+            }
+        }
     }
 }

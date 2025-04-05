@@ -417,6 +417,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2824357866711331890, guid: f18d1cdbddff5ba4aa8104ccd46d243a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6105
+      objectReference: {fileID: 0}
     - target: {fileID: 5706310806852759723, guid: f18d1cdbddff5ba4aa8104ccd46d243a, type: 3}
       propertyPath: m_Name
       value: DoorwayContainer
@@ -479,7 +483,10 @@ PrefabInstance:
       value: CorridoorContainer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8439956148028792358, guid: 2337d68f300234340a2cb6c437f62c10, type: 3}
+    - {fileID: 5761244390770836677, guid: 2337d68f300234340a2cb6c437f62c10, type: 3}
+    - {fileID: 9173061236631328907, guid: 2337d68f300234340a2cb6c437f62c10, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6505040546784095377, guid: 2337d68f300234340a2cb6c437f62c10, type: 3}
       insertIndex: -1
