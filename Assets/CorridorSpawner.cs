@@ -32,7 +32,7 @@ public class CorridorSpawner : MonoBehaviour
             SpawnCorridor(lastZSpawned);
         }
 
-        if(playerPos.z - lastPlayerPos.z > 0)
+        if(Mathf.Abs(playerPos.z - lastPlayerPos.z) > 0)
         {
             doorwayPrefab.transform.Translate(new Vector3(0, 0, playerPos.z - lastPlayerPos.z));
             lastPlayerPos = playerPos;
