@@ -119,6 +119,85 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &1053090243 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5757248241410857198, guid: f18d1cdbddff5ba4aa8104ccd46d243a, type: 3}
+  m_PrefabInstance: {fileID: 1335226701763142635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1205232873 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+  m_PrefabInstance: {fileID: 1319820865}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1319820865
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1053090243}
+    m_Modifications:
+    - target: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.801
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481849282151807067, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241527489530559681, guid: 7754dc2c630126c499857222c755c680, type: 3}
+      propertyPath: m_Name
+      value: lamp
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7754dc2c630126c499857222c755c680, type: 3}
 --- !u!1001 &1345215802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -423,7 +502,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5757248241410857198, guid: f18d1cdbddff5ba4aa8104ccd46d243a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1205232873}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f18d1cdbddff5ba4aa8104ccd46d243a, type: 3}
 --- !u!1001 &5996156039398429700
