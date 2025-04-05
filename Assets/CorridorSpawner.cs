@@ -6,39 +6,53 @@ public class CorridorSpawner : MonoBehaviour
     public GameObject corridorPrefab;
     public GameObject doorwayPrefab;
     public int corridorLength = 5;
-    private int lastZSpawned = 10;
+    private int lastZSpawned = 0;
     private List<GameObject> spawnedCorridors = new List<GameObject>();
     public Vector3 lastPlayerPos;
 
-    public int buffer = 3;
+    public int buffer = 10;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Spawn in 3 corridors. 
+        // Spawn the initial buffer of corridor segments
+        for (int i = 0; i < buffer; i++)
+        {
+            SpawnCorridor(i * corridorLength);
+        }
+
+        lastZSpawned = buffer * corridorLength;
+
+        // Position the doorway ahead of the player
+        doorwayPrefab.transform.position = new Vector3(
+            doorwayPrefab.transform.position.x,
+            doorwayPrefab.transform.position.y,
+            GameManager.Instance.playerController.transform.position.z + (corridorLength * buffer)
+        );
+
+        // Store initial player position
+        lastPlayerPos = GameManager.Instance.playerController.transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(lastPlayerPos == null)
-        {
-            lastPlayerPos = GameManager.Instance.playerController.transform.position;
-        }
-        //Get players position 
         Vector3 playerPos = GameManager.Instance.playerController.transform.position;
-        //When the player passes some threshold. Spawn in a new corridor
+
+        // Spawn new corridor if player is getting close to the end of current ones
         if (playerPos.z + (buffer * corridorLength) > lastZSpawned)
         {
             SpawnCorridor(lastZSpawned);
         }
 
-        if(Mathf.Abs(playerPos.z - lastPlayerPos.z) > 0)
-        {
-            doorwayPrefab.transform.Translate(new Vector3(0, 0, playerPos.z - lastPlayerPos.z));
-            lastPlayerPos = playerPos;
-        }
-        
-        //TODO: Delete old corridors? 
+        // Move doorway to always stay buffer-lengths ahead of player
+        doorwayPrefab.transform.position = new Vector3(
+            doorwayPrefab.transform.position.x,
+            doorwayPrefab.transform.position.y,
+            playerPos.z + (corridorLength * buffer)
+        );
+
+        lastPlayerPos = playerPos;
+
+        // Optional TODO: Remove/destroy corridor segments that are far behind
     }
 
     void SpawnCorridor(int zPosition)
