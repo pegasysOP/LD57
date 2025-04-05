@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 7412896470151802236, guid: 7fb6c77fcfd6b10488c86f123c3518aa, type: 3}
+  activiationDistance: 5

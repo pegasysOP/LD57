@@ -1699,6 +1699,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 315722475}
     - target: {fileID: 7004809434788050688, guid: f8a1186f668d2184eb234771a5514286, type: 3}
+      propertyPath: activiationDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004809434788050688, guid: f8a1186f668d2184eb234771a5514286, type: 3}
       propertyPath: 'wallsToBeDeleted.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
