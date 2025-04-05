@@ -20,7 +20,9 @@ public class AudioManager : MonoBehaviour
 
     public void Init()
     {
-            Instance = this;
+        Instance = this;
+
+        UpdateVolume(SettingsUtils.GetMasterVolume());
     }
 
     public void PlayButtonPressedClip()
@@ -44,5 +46,11 @@ public class AudioManager : MonoBehaviour
         sfxSource.clip = footsteps[step];
         sfxSource.pitch = Random.Range(0.8f, 1.2f);
         sfxSource.PlayOneShot(footsteps[step]);
+    }
+
+    public void UpdateVolume(float value)
+    {
+        musicSource.volume = value;
+        sfxSource.volume = value;
     }
 }
