@@ -287,6 +287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling
       objectReference: {fileID: 0}
+    - target: {fileID: 1715446258646803116, guid: 7e6a55d27b7c45143b51ea66e4fb6a95, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a07f9aadca246144a9e400a28e277ec6, type: 2}
     - target: {fileID: 8997172941890732846, guid: 7e6a55d27b7c45143b51ea66e4fb6a95, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30
@@ -927,6 +931,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ceiling
       objectReference: {fileID: 0}
+    - target: {fileID: 1715446258646803116, guid: 7e6a55d27b7c45143b51ea66e4fb6a95, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a07f9aadca246144a9e400a28e277ec6, type: 2}
     - target: {fileID: 8997172941890732846, guid: 7e6a55d27b7c45143b51ea66e4fb6a95, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30
