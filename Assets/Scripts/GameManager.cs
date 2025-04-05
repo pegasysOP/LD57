@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
 
     public PlayerController playerController;
     public CameraController cameraController;
+    public PlayerInteraction playerInteraction;
 
     [Header("UI")]
     public PauseMenu pauseMenu;
+    public Hud hud;
 
     private void Awake()
     {
@@ -37,5 +39,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = pausing ? 0 : 1;
 
         cameraController.SetLocked(pausing);
+        playerInteraction.SetLocked(pausing);
     }
 }
