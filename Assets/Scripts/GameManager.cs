@@ -32,10 +32,10 @@ public class GameManager : MonoBehaviour
             pauseMenu.Toggle();
     }
 
-    public static void Pause(bool pausing)
+    public void Pause(bool pausing)
     {
         Time.timeScale = pausing ? 0 : 1;
 
-        // TODO: Also lock player input
+        cameraController.SetLocked(pausing);
     }
 }
