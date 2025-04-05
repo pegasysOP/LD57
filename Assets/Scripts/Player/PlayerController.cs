@@ -18,6 +18,14 @@ public class PlayerController : MonoBehaviour
     public float speedDebug;
     public bool groundDebug;
 
+    private void Start()
+    {
+        if (GameManager.Instance.playerController)
+            Debug.LogError("WARNING: Duplicate player controller instances in scene");
+
+        GameManager.Instance.playerController = this;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && groundDetector.IsGrounded)

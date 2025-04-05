@@ -5,21 +5,21 @@ public static class SceneUtils
 {
     public const string GAME_SCENE = "Game";
     public const string MENU_SCENE = "Menu";
-    public const string SETTINGS_SCENE = "Settings";
 
     public static void LoadGameScene()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         SceneManager.LoadScene(GAME_SCENE);
     }
 
     public static void LoadMenuScene()
     {
-        SceneManager.LoadScene(MENU_SCENE);
-    }
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
-    public static void LoadSettingsScene()
-    {
-        SceneManager.LoadScene(SETTINGS_SCENE);
+        SceneManager.LoadScene(MENU_SCENE);
     }
 
     public static void QuitApplication()

@@ -1,0 +1,79 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PauseMenu : MonoBehaviour
+{
+    public Button resumeButton;
+    public Slider sensitivitySlider;
+    public Slider volumeSlider;
+    public Button quitButton;
+
+    private void Awake()
+    {
+        sensitivitySlider.value = SettingsUtils.GetSensitivity();
+        volumeSlider.value = SettingsUtils.GetMasterVolume();
+    }
+
+    private void OnEnable()
+    {
+        resumeButton.onClick.AddListener(OnResumeButtonClick);
+        sensitivitySlider.onValueChanged.AddListener(OnSensitivityValueChanged);
+        volumeSlider.onValueChanged.AddListener(OnVolumeValueChanged);
+        quitButton.onClick.AddListener(OnQuitButtonClick);
+    }
+
+    private void OnDisable()
+    {
+        resumeButton.onClick.RemoveListener(OnResumeButtonClick);
+        sensitivitySlider.onValueChanged.RemoveListener(OnSensitivityValueChanged);
+        volumeSlider.onValueChanged.RemoveListener(OnVolumeValueChanged);
+        quitButton.onClick.RemoveListener(OnQuitButtonClick);
+    }
+
+    public void Toggle()
+    {
+        bool pausing = !isActiveAndEnabled;
+
+        Cursor.visible = pausing;
+        Cursor.lockState = pausing ? CursorLockMode.None : CursorLockMode.Locked;
+
+        GameManager.Pause(pausing);
+
+        gameObject.SetActive(pausing);
+    }
+
+    private void OnSensitivityValueChanged(float newValue)
+    {
+        SaveNewSensitivity(newValue);
+    }
+
+    private void SaveNewSensitivity(float newValue)
+    {
+        SettingsUtils.SetSensitivity(newValue);
+
+        if (GameManager.Instance?.cameraController != null)
+            GameManager.Instance.cameraController.UpdateSensitivity(newValue);
+    }
+
+    private void OnVolumeValueChanged(float newValue)
+    {
+        SaveNewVolume(newValue);
+
+        // TODO Set audio manager volume
+    }
+
+    private void SaveNewVolume(float newValue)
+    {
+        SettingsUtils.SetMasterVolume(newValue);
+    }
+
+    private void OnResumeButtonClick()
+    {
+        Toggle();
+    }
+
+    private void OnQuitButtonClick()
+    {
+        SceneUtils.LoadMenuScene();
+    }
+}

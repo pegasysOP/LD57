@@ -31,7 +31,7 @@ public class MainMenu : MonoBehaviour
 
     private void OnSettingsButtonClick()
     {
-        SceneUtils.LoadSettingsScene();
+
     }
 
     private void OnQuitButtonClick()
