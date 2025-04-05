@@ -121,5 +121,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5793650285b2574995bcedc458ecc05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wall: {fileID: 7412896470151802236, guid: 7fb6c77fcfd6b10488c86f123c3518aa, type: 3}
+  wall: {fileID: 0}
   activiationDistance: 5
