@@ -10,7 +10,6 @@ public class MainMenu : MonoBehaviour
     private void OnEnable()
     {
         startButton.onClick.AddListener(OnStartButtonClick);
-        settingsButton.onClick.AddListener(OnSettingsButtonClick);
         quitButton.onClick.AddListener(OnQuitButtonClick);
 
 #if UNITY_WEBGL
