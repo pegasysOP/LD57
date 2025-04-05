@@ -18,7 +18,7 @@ public class SettingsUtils : MonoBehaviour
 
     public static float GetMasterVolume()
     {
-        return PlayerPrefs.GetFloat(MasterVolumeKey, 0.5f);
+        return PlayerPrefs.GetFloat(MasterVolumeKey, 1.0f);
     }
 
     public static void SetMasterVolume(float value)

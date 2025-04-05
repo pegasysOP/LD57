@@ -51,15 +51,14 @@ public class PauseMenu : MonoBehaviour
     {
         SettingsUtils.SetSensitivity(newValue);
 
-        if (GameManager.Instance?.cameraController != null)
-            GameManager.Instance.cameraController.UpdateSensitivity(newValue);
+        GameManager.Instance?.cameraController?.UpdateSensitivity(newValue);
     }
 
     private void OnVolumeValueChanged(float newValue)
     {
         SaveNewVolume(newValue);
 
-        // TODO Set audio manager volume
+        GameManager.Instance?.audioManager?.UpdateVolume(newValue);
     }
 
     private void SaveNewVolume(float newValue)

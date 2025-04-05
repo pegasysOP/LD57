@@ -7,46 +7,22 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioSource sfxSource;
 
+    [Header("Player")]
+    public List<AudioClip> footsteps = new List<AudioClip>();
+
     [Header("UI")]
     public AudioClip buttonPressClip;
-
-    [Header("Phase Music")]
-    public AudioClip menuClip;
-    public AudioClip gameOverClip;
-    public AudioClip gameWonClip;
 
     [Header("Interaction Sounds")]
     public AudioClip selectClip;
 
-    [Header("Special Attacks")]
-    public AudioClip attackClip;
-
     public static AudioManager Instance;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void Init()
     {
-        
-    }
+        Instance = this;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);  // Ensure this object persists between scenes
-        }
-        else if (Instance != this)
-        {
-            // Destroy duplicate instances to prevent multiple AudioManagers
-            Destroy(gameObject);
-            return;
-        }
+        UpdateVolume(SettingsUtils.GetMasterVolume());
     }
 
     public void PlayButtonPressedClip()
@@ -55,34 +31,26 @@ public class AudioManager : MonoBehaviour
         sfxSource.Play();
     }
 
-    public void PlayMenuClip()
-    {
-        musicSource.clip = menuClip;
-        musicSource.Play();
-    }
-
-    public void PlayGameOverClip()
-    {
-        musicSource.clip = gameOverClip;
-        musicSource.Play();
-    }
-
-    public void PlayGameWonClip()
-    {
-        musicSource.clip = gameWonClip;
-        musicSource.Play();
-    }
-
     public void PlaySelectClip()
     {
         sfxSource.clip = selectClip;
         musicSource.Play();
     }
 
-    public void PlayAttackClip()
+    public void PlayFootstep()
     {
-        sfxSource.clip = attackClip;
-        sfxSource.Play();
+        if (sfxSource == null || footsteps == null || footsteps.Count == 0)
+            return;
+
+        int step = Random.Range(0, footsteps.Count);
+        sfxSource.clip = footsteps[step];
+        sfxSource.pitch = Random.Range(0.8f, 1.2f);
+        sfxSource.PlayOneShot(footsteps[step]);
     }
 
+    public void UpdateVolume(float value)
+    {
+        musicSource.volume = value;
+        sfxSource.volume = value;
+    }
 }
