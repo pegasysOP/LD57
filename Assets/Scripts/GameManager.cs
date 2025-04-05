@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public PlayerController playerController;
     public CameraController cameraController;
     public PlayerInteraction playerInteraction;
+    public AudioManager audioManager;
 
     [Header("UI")]
     public PauseMenu pauseMenu;
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        audioManager.Init();
     }
 
     private void Update()
