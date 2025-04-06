@@ -8,4 +8,9 @@ public class WallDeletion : MonoBehaviour, IInteractable
     {
         wall.SetActive(false);
     }
+
+    public bool IsInteractable()
+    {
+        return true;
+    }
 }

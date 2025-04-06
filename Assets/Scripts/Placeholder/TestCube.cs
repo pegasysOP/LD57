@@ -6,4 +6,9 @@ public class TestCube : MonoBehaviour, IInteractable
     {
         Debug.Log("TestCube Interacted");
     }
+
+    public bool IsInteractable()
+    {
+        return true;
+    }
 }

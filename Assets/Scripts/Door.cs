@@ -13,7 +13,7 @@ public class Door : MonoBehaviour, IInteractable
 
     public DoorState state = DoorState.Closed;
 
-    public void Interact()
+    public virtual void Interact()
     {
         switch (state)
         {
@@ -27,7 +27,11 @@ public class Door : MonoBehaviour, IInteractable
                 ShowLockedAnimation();
                 break;
         }
+    }
 
+    public virtual bool IsInteractable()
+    {
+        return state != DoorState.Locked;
     }
 
     public void OpenDoor()

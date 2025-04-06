@@ -42,7 +42,7 @@ public class PlayerInteraction : MonoBehaviour
                 if (interactable == null)
                     return;
 
-                if (highlightedInteractable == null)
+                if (highlightedInteractable == null && interactable.IsInteractable())
                 {
                     highlightedInteractable = interactable;
                     GameManager.Instance.hud.ShowInteractPrompt(true);
