@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4830063742896531550}
   - component: {fileID: 3855924008922591255}
-  m_Layer: 0
+  - component: {fileID: 6259492300556151407}
+  - component: {fileID: 5538874638577241168}
+  m_Layer: 12
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,6 +61,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &6259492300556151407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374616584802115373}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0249999, y: 2.18, z: 0.06}
+  m_Center: {x: -0.525, y: 1.09, z: 0}
+--- !u!114 &5538874638577241168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374616584802115373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db60a72156437654faded52509436f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3855924008922591255}
+  state: 1
 --- !u!1 &1570713720721530428
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +107,7 @@ GameObject:
   - component: {fileID: 3633258424705318707}
   - component: {fileID: 7071993364479010744}
   - component: {fileID: 1935524890303697197}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: metal2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +193,7 @@ GameObject:
   - component: {fileID: 803101872477658092}
   - component: {fileID: 8874353446246551684}
   - component: {fileID: 4920946345425449470}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +279,7 @@ GameObject:
   - component: {fileID: 1595560993183731015}
   - component: {fileID: 8116444695798136572}
   - component: {fileID: 442096615077139633}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +451,7 @@ GameObject:
   - component: {fileID: 6996876111661850844}
   - component: {fileID: 2096411254787404533}
   - component: {fileID: 9124920423261120079}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +537,7 @@ GameObject:
   - component: {fileID: 3654024255129351796}
   - component: {fileID: 37919850382047586}
   - component: {fileID: 3765642077291997614}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: metal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5270159175566818143}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +637,7 @@ Transform:
   m_GameObject: {fileID: 7524818955400826497}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.678446, y: 2.842171e-14, z: 32.131}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
