@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   segmentPrefab: {fileID: 6639848425763847133, guid: 2337d68f300234340a2cb6c437f62c10, type: 3}
   endWall: {fileID: 8591815905657899345}
-  forwardBuffer: 10
+  forwardBuffer: 7
   behindBuffer: 3
   segmentLength: 20
 --- !u!1001 &4038779409344510458
