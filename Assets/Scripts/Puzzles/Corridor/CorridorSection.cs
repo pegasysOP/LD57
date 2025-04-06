@@ -6,6 +6,8 @@ public class CorridorSection : MonoBehaviour
     public GameObject area1;
     public GameObject area2;
 
+    public GameObject areaToDespawn;
+
     public float activationDistance = 70f;
     public float activationAngle = 60f;
     public float tpDistance = 30f;
@@ -48,6 +50,7 @@ public class CorridorSection : MonoBehaviour
         activated = true;
         area1.SetActive(false);
         area2.SetActive(true);
+        areaToDespawn.SetActive(false);
     }
 
     private void Shift()
