@@ -6,8 +6,9 @@ public class CorridorSection : MonoBehaviour
     public GameObject area1;
     public GameObject area2;
 
-    public float activationDistance = 30f;
+    public float activationDistance = 70f;
     public float activationAngle = 60f;
+    public float tpDistance = 30f;
 
     private bool activated = false;
     private bool complete = false;
@@ -55,13 +56,13 @@ public class CorridorSection : MonoBehaviour
 
         // only tp beyond activation distance
         float distanceToPlayer = playerPos.z - transform.position.z;
-        if (distanceToPlayer < activationDistance)
+        if (distanceToPlayer < tpDistance)
             return;
 
         //move player nearer to start
         float distanceIntoSegment = (playerPos.z - transform.position.z) % spawner.segmentLength;
-        int activationSegment = Mathf.FloorToInt(activationDistance / spawner.segmentLength);
-        playerPos.z = transform.position.z + activationSegment * spawner.segmentLength + distanceIntoSegment;
+        int tpSegment = Mathf.FloorToInt(tpDistance / spawner.segmentLength);
+        playerPos.z = transform.position.z + tpSegment * spawner.segmentLength + distanceIntoSegment;
 
         GameManager.Instance.playerController.transform.position = playerPos;
 
