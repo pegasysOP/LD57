@@ -10,60 +10,72 @@ public class CorridorSpawner : MonoBehaviour
     public int behindBuffer = 3;
     public int segmentLength;
 
-
     private List<GameObject> spawnedCorridors = new List<GameObject>();
-    private int lastZSpawned = 0;
+    private float spawnLocation;
 
+    private bool complete = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
+        spawnLocation = segmentLength / 2;
+
         // Spawn the initial buffer of corridor segments
         for (int i = 0; i < forwardBuffer; i++)
-        {
-            SpawnCorridor(i * segmentLength);
-        }
-
-        lastZSpawned = forwardBuffer * segmentLength;
+            SpawnCorridor();
     }
 
-    void Update()
+    private void Update()
     {
+        if (complete)
+            return;
+
         Vector3 playerPos = GameManager.Instance.playerController.transform.position;
 
+        MoveEndDoor(playerPos.z);
+
         // Spawn new corridor if player is getting close to the end of current ones
-        if (playerPos.z + (forwardBuffer * segmentLength) > lastZSpawned)
+        if (playerPos.z + (forwardBuffer * segmentLength) > spawnLocation)
         {
-            SpawnCorridor(lastZSpawned);
+            SpawnCorridor();
         }
+    }
+
+    private void MoveEndDoor(float playerZ)
+    {
+        if (complete)
+         return;
 
         // Move doorway to always stay buffer-lengths ahead of player
         endWall.transform.position = new Vector3(
             endWall.transform.position.x,
             endWall.transform.position.y,
-            playerPos.z + (segmentLength * forwardBuffer)
+            playerZ + (segmentLength * (forwardBuffer - 1.5f))
         );
-
-        CleanupOldCorridors(playerPos.z);
     }
 
-    void SpawnCorridor(int zPosition)
+    private void SpawnCorridor()
     {
-        GameObject corridor = Instantiate(segmentPrefab, new Vector3(0, 0, zPosition), Quaternion.identity, transform);
+        GameObject corridor = Instantiate(segmentPrefab, new Vector3(0, 0, spawnLocation), Quaternion.identity, transform);
         spawnedCorridors.Add(corridor);
-        lastZSpawned = zPosition + segmentLength;
+        spawnLocation += segmentLength;
     }
 
-    void CleanupOldCorridors(float playerZ)
+    public void CleanExcessSegments()
     {
-        for (int i = spawnedCorridors.Count - 1; i >= 0; i--)
+        int idealLength = (forwardBuffer + behindBuffer);
+
+        for (int i = spawnedCorridors.Count - 1; i >= idealLength; i--)
         {
-            GameObject corridor = spawnedCorridors[i];
-            if (playerZ - corridor.transform.position.z > segmentLength * behindBuffer)
-            {
-                Destroy(corridor);
-                spawnedCorridors.RemoveAt(i);
-            }
+            Destroy(spawnedCorridors[i]);
+            spawnedCorridors.RemoveAt(i);
         }
+
+        spawnLocation = (spawnedCorridors.Count + 0.5f) * segmentLength;
+    }
+
+    public void SetComplete()
+    {
+        complete = true;
     }
 }
