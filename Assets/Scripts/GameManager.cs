@@ -44,4 +44,11 @@ public class GameManager : MonoBehaviour
         cameraController.SetLocked(pausing);
         playerInteraction.SetLocked(pausing);
     }
+
+    public void DestroySelf()
+    {
+        Time.timeScale = 1;
+
+        Destroy(gameObject);
+    }
 }
