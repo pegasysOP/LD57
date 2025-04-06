@@ -324,6 +324,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e0fa35bb3774e1347adde90162263bed, type: 3}
   buttonPressClip: {fileID: 0}
   selectClip: {fileID: 0}
+  dreamStartClip: {fileID: 8300000, guid: 5b3bc75b0a516f541bff29737202ee6d, type: 3}
+  corridorClip: {fileID: 8300000, guid: 16677752b26fdc948bd84e81551e5348, type: 3}
+  hiddenRoomClip: {fileID: 0}
+  museaumClip: {fileID: 0}
+  fieldOfHorsesClip: {fileID: 8300000, guid: 685417c29e2bce849829ce3f20d90568, type: 3}
+  manyDoorsClip: {fileID: 0}
 --- !u!1 &4141029551325906212
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +661,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
