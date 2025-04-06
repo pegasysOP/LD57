@@ -62,6 +62,12 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
+    public void PlayCorridoorClip()
+    {
+        musicSource.clip = corridorClip;
+        musicSource.Play();
+    }
+
     public void UpdateVolume(float value)
     {
         musicSource.volume = value;
