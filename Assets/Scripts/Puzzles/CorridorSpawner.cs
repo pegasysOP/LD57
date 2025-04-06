@@ -56,7 +56,7 @@ public class CorridorSpawner : MonoBehaviour
 
     private void SpawnCorridor()
     {
-        GameObject corridor = Instantiate(segmentPrefab, new Vector3(transform.position.x, transform.position.y, spawnLocation), Quaternion.identity, transform);
+        GameObject corridor = Instantiate(segmentPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z + spawnLocation), Quaternion.identity, transform);
         spawnedCorridors.Add(corridor);
         spawnLocation += segmentLength;
     }
