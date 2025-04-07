@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SpawnRoom : Door
@@ -6,13 +7,16 @@ public class SpawnRoom : Door
     public bool correctDoor;
     public Vector3 offset;
 
+    public CanvasGroup fadeCanvasGroup;
+    public float fadeDuration = 5f;
+
     public Vector3 lastOffset = new Vector3(0, 0, 0);
 
     public override void Interact()
     {
         if (correctDoor)
         {
-            SceneUtils.LoadMenuScene();
+            StartCoroutine(FadeToBlack()); 
         }
         else
         {
@@ -35,6 +39,24 @@ public class SpawnRoom : Door
     public override bool IsInteractable()
     {
         return true;
+    }
+
+    public IEnumerator FadeToBlack()
+    {
+        float timer = 0f;
+
+        // Make sure the fade overlay is visible
+        fadeCanvasGroup.gameObject.SetActive(true);
+
+        while (timer < fadeDuration)
+        {
+            timer += Time.deltaTime;
+            fadeCanvasGroup.alpha = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+            yield return null;
+        }
+
+        fadeCanvasGroup.alpha = 1f;
+        SceneUtils.LoadMenuScene();
     }
 }
 
