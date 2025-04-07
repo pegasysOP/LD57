@@ -9,6 +9,7 @@ public class KeyInteractable : MonoBehaviour, IInteractable
         keyDoor.SetKey();
         gameObject.SetActive(false);
         GameManager.Instance.hud.ShowKeyIcon(true);
+        AudioManager.Instance.PlayItemAcquireClip();
     }
 
     public bool IsInteractable()

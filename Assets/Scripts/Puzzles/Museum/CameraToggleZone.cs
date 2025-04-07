@@ -10,6 +10,7 @@ public class CameraToggleZone : MonoBehaviour
         {
             GameManager.Instance.cameraController.playerCamera.orthographic = true;
             museumController.SetScanning(true);
+            GameManager.Instance.hud.ShowCameraOverlay(true);
         }
     }
 
@@ -19,6 +20,7 @@ public class CameraToggleZone : MonoBehaviour
         {
             GameManager.Instance.cameraController.playerCamera.orthographic = false;
             museumController.SetScanning(false);
+            GameManager.Instance.hud.ShowCameraOverlay(false);
         }
     }
 }
