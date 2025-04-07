@@ -399,9 +399,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2941647920968097301}
   state: 1
+  prefabToDisable: {fileID: 0}
+  prefabToEnable: {fileID: 0}
   room: {fileID: 0}
   correctDoor: 1
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 0, z: -8.15}
+  fadeCanvasGroup: {fileID: 0}
+  fadeDuration: 5
+  lastOffset: {x: 0, y: 0, z: 0}
 --- !u!95 &2941647920968097301 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3855924008922591255, guid: 8923fa607f82fa74abd5a7c7e0417615, type: 3}

@@ -8,7 +8,7 @@ public class SpawnRoom : Door
     public Vector3 offset;
 
     public CanvasGroup fadeCanvasGroup;
-    public float fadeDuration = 5f;
+    public float fadeDuration = 2f;
 
     public Vector3 lastOffset = new Vector3(0, 0, 0);
 
@@ -18,11 +18,10 @@ public class SpawnRoom : Door
         {
             StartCoroutine(FadeToBlack()); 
         }
-        else
-        {
+        
             MoveRoom(offset);
             room.SetActive(true);
-        }
+        
 
         base.Interact();
     }

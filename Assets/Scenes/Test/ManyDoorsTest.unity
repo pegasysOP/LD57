@@ -350,7 +350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8052841976418038987, guid: 2f4939c2934261048bb034181544ac05, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8474794762607723404, guid: 2f4939c2934261048bb034181544ac05, type: 3}
       propertyPath: m_LocalScale.x
@@ -477,6 +477,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5935354744543792451, guid: 2f4939c2934261048bb034181544ac05, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782926681936888244, guid: 2f4939c2934261048bb034181544ac05, type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 393420561}
+    - target: {fileID: 6782926681936888244, guid: 2f4939c2934261048bb034181544ac05, type: 3}
+      propertyPath: fadeDuration
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6782926681936888244, guid: 2f4939c2934261048bb034181544ac05, type: 3}
