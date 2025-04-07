@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
     [Header("UI")]
     public AudioClip buttonPressClip;
     public AudioClip buttonHoverClip;
+    public AudioClip pauseMenuOpenClip;
+    public AudioClip pauseMenuClosedClip;
 
     [Header("Interaction Sounds")]
     public AudioClip selectClip;
@@ -51,6 +53,18 @@ public class AudioManager : MonoBehaviour
     public void PlayButtonHoverClip()
     {
         sfxSource.clip = buttonHoverClip;
+        sfxSource.Play();
+    }
+
+    public void PauseMenuOpenClip()
+    {
+        sfxSource.clip = pauseMenuOpenClip;
+        sfxSource.Play();
+    }
+
+    public void PauseMenuClosedClip()
+    {
+        sfxSource.clip = pauseMenuClosedClip;
         sfxSource.Play();
     }
 

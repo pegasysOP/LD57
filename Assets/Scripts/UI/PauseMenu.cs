@@ -20,6 +20,7 @@ public class PauseMenu : MonoBehaviour
         sensitivitySlider.onValueChanged.AddListener(OnSensitivityValueChanged);
         volumeSlider.onValueChanged.AddListener(OnVolumeValueChanged);
         quitButton.onClick.AddListener(OnQuitButtonClick);
+        AudioManager.Instance.PauseMenuOpenClip();
     }
 
     private void OnDisable()
@@ -28,6 +29,7 @@ public class PauseMenu : MonoBehaviour
         sensitivitySlider.onValueChanged.RemoveListener(OnSensitivityValueChanged);
         volumeSlider.onValueChanged.RemoveListener(OnVolumeValueChanged);
         quitButton.onClick.RemoveListener(OnQuitButtonClick);
+        AudioManager.Instance.PauseMenuClosedClip();
     }
 
     public void Toggle()
