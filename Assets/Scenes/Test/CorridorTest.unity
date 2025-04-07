@@ -919,6 +919,10 @@ PrefabInstance:
       propertyPath: area2
       value: 
       objectReference: {fileID: 478624141}
+    - target: {fileID: 3719847962999108661, guid: a8cf02fc60fbe584998af88d5ad92e98, type: 3}
+      propertyPath: areaToDespawn
+      value: 
+      objectReference: {fileID: 474197052}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
