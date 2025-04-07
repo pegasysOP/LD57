@@ -19,6 +19,8 @@ public static class SceneUtils
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        GameManager.Instance?.DestroySelf();
+
         SceneManager.LoadScene(MENU_SCENE);
     }
 

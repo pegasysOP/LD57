@@ -48,7 +48,7 @@ public class Door : MonoBehaviour, IInteractable
 
     public void ShowLockedAnimation()
     {
-        //animator.SetTrigger("Locked");
+        animator.SetTrigger("Locked");
     }
 
     public void CloseToLocked()
