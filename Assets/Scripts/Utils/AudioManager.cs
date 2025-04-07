@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource musicSource;
     public AudioSource sfxSource;
+    public AudioSource bubbleSource;
 
     [Header("Player")]
     public List<AudioClip> footsteps = new List<AudioClip>();
@@ -135,5 +136,6 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.volume = value / 3;
         sfxSource.volume = value;
+        bubbleSource.volume = value;
     }
 }
