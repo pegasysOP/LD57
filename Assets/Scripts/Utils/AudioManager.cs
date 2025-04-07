@@ -16,6 +16,9 @@ public class AudioManager : MonoBehaviour
     [Header("Interaction Sounds")]
     public AudioClip selectClip;
 
+    [Header("Voice Lines")]
+    public AudioClip correctDoorClip;
+
     [Header("Music")]
     public AudioClip dreamStartClip;
     public AudioClip corridorClip;
@@ -45,6 +48,12 @@ public class AudioManager : MonoBehaviour
         sfxSource.Play();
     }
 
+    public void PlayMusic(AudioClip clip)
+    {
+        musicSource.clip = clip;
+        musicSource.Play();
+    }
+
     public void PlayFootstep()
     {
         if (sfxSource == null || footsteps == null || footsteps.Count == 0)
@@ -54,6 +63,12 @@ public class AudioManager : MonoBehaviour
         sfxSource.clip = footsteps[step];
         sfxSource.pitch = Random.Range(0.8f, 1.2f);
         sfxSource.PlayOneShot(footsteps[step]);
+    }
+
+    public void PlayCorrectDoorClip()
+    {
+        sfxSource.clip = correctDoorClip;
+        sfxSource.Play();
     }
 
     public void PlayDreamStartClip()
