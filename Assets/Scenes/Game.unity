@@ -3558,6 +3558,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df4468b28dadb2348b8dc6637e6d9a4c, type: 3}
+--- !u!1 &171158340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6319498979947889685, guid: ea2752fe6cd3918448c77758598d91bf, type: 3}
+  m_PrefabInstance: {fileID: 371629601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &180033638
 GameObject:
   m_ObjectHideFlags: 0
@@ -7742,9 +7747,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1464907240}
     m_Modifications:
     - target: {fileID: 1978986273371068883, guid: ea2752fe6cd3918448c77758598d91bf, type: 3}
+      propertyPath: objectToEnable
+      value: 
+      objectReference: {fileID: 1539175441}
+    - target: {fileID: 1978986273371068883, guid: ea2752fe6cd3918448c77758598d91bf, type: 3}
       propertyPath: prefabToEnable
       value: 
       objectReference: {fileID: 1539175441}
+    - target: {fileID: 1978986273371068883, guid: ea2752fe6cd3918448c77758598d91bf, type: 3}
+      propertyPath: objectToDisable
+      value: 
+      objectReference: {fileID: 1623218462}
     - target: {fileID: 1978986273371068883, guid: ea2752fe6cd3918448c77758598d91bf, type: 3}
       propertyPath: prefabToDisable
       value: 
@@ -7761,6 +7774,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6602478841765652508, guid: ea2752fe6cd3918448c77758598d91bf, type: 3}
+      propertyPath: objectToEnable
+      value: 
+      objectReference: {fileID: 171158340}
+    - target: {fileID: 6602478841765652508, guid: ea2752fe6cd3918448c77758598d91bf, type: 3}
+      propertyPath: objectToDisable
+      value: 
+      objectReference: {fileID: 1623218462}
     - target: {fileID: 6602478841765652508, guid: ea2752fe6cd3918448c77758598d91bf, type: 3}
       propertyPath: prefabToDisable
       value: 
@@ -34034,9 +34055,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1842278105}
     - target: {fileID: 7434468935405959475, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: objectToEnable
+      value: 
+      objectReference: {fileID: 1814961459}
+    - target: {fileID: 7434468935405959475, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
       propertyPath: prefabToEnable
       value: 
       objectReference: {fileID: 1814961459}
+    - target: {fileID: 7434468935405959475, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: objectToDisable
+      value: 
+      objectReference: {fileID: 1623218462}
     - target: {fileID: 8629370629402670075, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
       propertyPath: m_Name
       value: Museum Container
