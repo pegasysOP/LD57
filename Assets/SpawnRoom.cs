@@ -23,7 +23,7 @@ public class SpawnRoom : Door
 
     private void MoveRoom(Vector3 offset)
     {
-        room.transform.Translate(offset);
+        room.transform.Translate(offset); //TODO: first we want to inverse the previous offset (i.e. if the offset is (0,0, 10) we want to do (0,0,-10) first. Then we add the current offset to it)
     }
 
     public override bool IsInteractable()
