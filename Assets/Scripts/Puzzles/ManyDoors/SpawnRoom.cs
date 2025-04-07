@@ -12,6 +12,17 @@ public class SpawnRoom : Door
 
     public Vector3 lastOffset = new Vector3(0, 0, 0);
 
+    private Vector3 initialPosition;
+
+    public void Start()
+    {
+        if(room != null)
+        {
+            initialPosition = room.transform.position;
+        }
+        
+    }
+
     public override void Interact()
     {
         if (correctDoor)
@@ -21,15 +32,30 @@ public class SpawnRoom : Door
         
             MoveRoom(offset);
             room.SetActive(true);
-        
+
+        //Close all other doors
+        CloseAllOtherRooms(this);
 
         base.Interact();
     }
 
+    public void CloseAllOtherRooms(SpawnRoom currentRoom)
+    {
+        SpawnRoom[] spawnRooms = FindObjectsByType<SpawnRoom>(FindObjectsSortMode.None);
+
+        foreach (SpawnRoom spawnRoom in spawnRooms)
+        {
+            if (spawnRoom != currentRoom)
+            {
+                spawnRoom.CloseDoor();
+            }
+        }
+    }
+
     private void MoveRoom(Vector3 offset)
     {
-        Vector3 adjustedOffset = offset;  // + lastOffset;
-        room.transform.Translate(adjustedOffset); //TODO: first we want to inverse the previous offset (i.e. if the offset is (0,0, 10) we want to do (0,0,-10) first. Then we add the current offset to it)
+        Vector3 adjustedOffset = initialPosition + offset; 
+        room.transform.position = (adjustedOffset); //TODO: first we want to inverse the previous offset (i.e. if the offset is (0,0, 10) we want to do (0,0,-10) first. Then we add the current offset to it)
         lastOffset = offset;
 
         //TODO: close all other doors when you open a door and also have the walls be smaller
