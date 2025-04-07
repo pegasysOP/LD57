@@ -8247,6 +8247,10 @@ PrefabInstance:
       propertyPath: areaToDespawn
       value: 
       objectReference: {fileID: 1593321012}
+    - target: {fileID: 4874993790511469340, guid: a8cf02fc60fbe584998af88d5ad92e98, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7753043504172390414, guid: a8cf02fc60fbe584998af88d5ad92e98, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.05
@@ -33228,7 +33232,7 @@ Transform:
   m_GameObject: {fileID: 2020043869}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071064, z: -0, w: 0.7071072}
-  m_LocalPosition: {x: 1.51, y: -0.87431645, z: 15.351}
+  m_LocalPosition: {x: 1.51, y: -0.87431645, z: 15.8}
   m_LocalScale: {x: 2.6466577, y: 0.68472195, z: 0.31152782}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33616,7 +33620,7 @@ Transform:
   m_GameObject: {fileID: 2044920291}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 10.359797, y: -3.361, z: -20.53}
+  m_LocalPosition: {x: 10.359797, y: -3.361, z: -21.1}
   m_LocalScale: {x: 3.5356698, y: 0.91472, z: 0.41617}
   m_ConstrainProportionsScale: 0
   m_Children: []
