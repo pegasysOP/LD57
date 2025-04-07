@@ -136,6 +136,10 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.volume = value / 3;
         sfxSource.volume = value;
-        bubbleSource.volume = value;
+        if(bubbleSource != null)
+        {
+             bubbleSource.volume = value;
+        }
+       
     }
 }
