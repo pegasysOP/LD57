@@ -30,7 +30,7 @@ public class Teleport : MonoBehaviour
             Debug.Log("Player is teleported");
             player.transform.position = destination.transform.position;
             secondRoom.SetActive(false);
-            //spawnRoom.GetComponent<SpawnRoom>().state = DoorState.Closed;
+            spawnRoom.GetComponent<SpawnRoom>().CloseDoor();
         }
     }
 }
