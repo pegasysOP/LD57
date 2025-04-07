@@ -4,12 +4,18 @@ public class KeyInteractable : MonoBehaviour, IInteractable
 {
     public KeyDoor keyDoor;
 
+    public GameObject prefabToDisable;
+
     public void Interact()
     {
         keyDoor.SetKey();
         gameObject.SetActive(false);
         GameManager.Instance.hud.ShowKeyIcon(true);
         AudioManager.Instance.PlayItemAcquireClip();
+        if(prefabToDisable != null)
+        {
+            prefabToDisable.SetActive(false);
+        }
     }
 
     public bool IsInteractable()
