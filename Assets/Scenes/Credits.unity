@@ -2911,8 +2911,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 20c760bd2ca7d0c4dbb25121cf1c2858, type: 3}
-  m_Resource: {fileID: 8300000, guid: 20c760bd2ca7d0c4dbb25121cf1c2858, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 30384645754cfbc4caa6f3b9486cc89e, type: 3}
+  m_Resource: {fileID: 8300000, guid: 30384645754cfbc4caa6f3b9486cc89e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3012,9 +3012,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1697456880}
   sfxSource: {fileID: 0}
+  bubbleSource: {fileID: 0}
   footsteps: []
   buttonPressClip: {fileID: 0}
   buttonHoverClip: {fileID: 0}
+  pauseMenuOpenClip: {fileID: 0}
+  pauseMenuClosedClip: {fileID: 0}
   selectClip: {fileID: 0}
   doorOpenClip: {fileID: 0}
   doorCloseClip: {fileID: 0}
