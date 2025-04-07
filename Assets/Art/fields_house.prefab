@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 5210245363026026518}
   - component: {fileID: 3485265300857446678}
   - component: {fileID: 8177649354649525419}
+  - component: {fileID: 5454283364484892678}
   m_Layer: 0
   m_Name: road_square
   m_TagString: Untagged
@@ -434,6 +435,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5454283364484892678
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318045229931583526}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2123127616401075106, guid: 7c9410d9cb3b8574cbe861001ac9082a, type: 3}
 --- !u!1 &1388027403993809048
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +729,7 @@ GameObject:
   - component: {fileID: 2895060995006988530}
   - component: {fileID: 7747929318024777023}
   - component: {fileID: 6613946075630765042}
+  - component: {fileID: 6028073804282683949}
   m_Layer: 0
   m_Name: road
   m_TagString: Untagged
@@ -781,6 +805,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6028073804282683949
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950723650694646686}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8728854048086142887, guid: 7c9410d9cb3b8574cbe861001ac9082a, type: 3}
 --- !u!1 &2070570434231488457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,6 +2230,7 @@ GameObject:
   - component: {fileID: 6096753146871111609}
   - component: {fileID: 186958277079860926}
   - component: {fileID: 5307453438802383058}
+  - component: {fileID: 7532671376054841730}
   m_Layer: 0
   m_Name: road1
   m_TagString: Untagged
@@ -2259,6 +2306,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7532671376054841730
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4146444818974613020}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4163724365912177184, guid: 7c9410d9cb3b8574cbe861001ac9082a, type: 3}
 --- !u!1 &4241956744207717656
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,6 +2513,7 @@ GameObject:
   - component: {fileID: 3321383979203586818}
   - component: {fileID: 4046312590173547537}
   - component: {fileID: 6526752399861849233}
+  - component: {fileID: 1798938309449981845}
   m_Layer: 0
   m_Name: road (1)
   m_TagString: Untagged
@@ -2519,6 +2589,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1798938309449981845
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302626587396384809}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8728854048086142887, guid: 7c9410d9cb3b8574cbe861001ac9082a, type: 3}
 --- !u!1 &4375628220101965048
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,7 +3735,7 @@ Transform:
   m_GameObject: {fileID: 5863820569971697151}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.668674, y: 0.33020568, z: -13.849663}
+  m_LocalPosition: {x: 13.7, y: -12.18, z: -37.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

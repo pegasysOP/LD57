@@ -119,7 +119,7 @@ public class AudioManager : MonoBehaviour
 
     public void UpdateVolume(float value)
     {
-        musicSource.volume = value;
+        musicSource.volume = value / 3;
         sfxSource.volume = value;
     }
 }
