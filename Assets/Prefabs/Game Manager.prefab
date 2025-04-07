@@ -357,8 +357,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f4fbabde5237bbc4d83f520e840ec033, type: 3}
   - {fileID: 8300000, guid: 2b56133d6ce7da8438fd4bf73c5cf3ef, type: 3}
   - {fileID: 8300000, guid: e0fa35bb3774e1347adde90162263bed, type: 3}
-  buttonPressClip: {fileID: 0}
-  buttonHoverClip: {fileID: 0}
+  buttonPressClip: {fileID: 8300000, guid: f1cd36fdd6be3a940b0dfd17c878e653, type: 3}
+  buttonHoverClip: {fileID: 8300000, guid: a26691b7909bfde488197cb3f19c10c7, type: 3}
+  pauseMenuOpenClip: {fileID: 8300000, guid: 50e13f9dc38c5b14183c70cdd71b0726, type: 3}
+  pauseMenuClosedClip: {fileID: 8300000, guid: 972148765702ac3499cf2b8e54071343, type: 3}
   selectClip: {fileID: 0}
   doorOpenClip: {fileID: 8300000, guid: bd02ed46c88f5314b97b32e8c143dd18, type: 3}
   doorCloseClip: {fileID: 8300000, guid: 3ad6c9f86f8f1b6478e292f450276555, type: 3}
