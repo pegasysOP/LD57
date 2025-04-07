@@ -5,6 +5,7 @@ public class Hud : MonoBehaviour
     public GameObject crosshair;
     public GameObject interactPrompt;
     public GameObject keyIcon;
+    public GameObject cameraOverlay;
 
     public void ShowInteractPrompt(bool show)
     {
@@ -14,5 +15,10 @@ public class Hud : MonoBehaviour
     public void ShowKeyIcon(bool show)
     {
         keyIcon.SetActive(show);
+    }
+
+    public void ShowCameraOverlay(bool show)
+    {
+        cameraOverlay.SetActive(show);
     }
 }
