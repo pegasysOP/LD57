@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum DoorState
 {
@@ -14,9 +15,7 @@ public class Door : MonoBehaviour, IInteractable
 
     public DoorState state = DoorState.Closed;
 
-    public GameObject prefabToDisable;
-
-    public GameObject prefabToEnable;
+    public UnityEvent DoorOpened;
 
     public virtual void Interact()
     {
@@ -44,10 +43,8 @@ public class Door : MonoBehaviour, IInteractable
         state = DoorState.Open;
         animator.SetTrigger("Open");
         AudioManager.Instance.PlayDoorOpenClip();
-        if(prefabToEnable != null)
-        {
-            prefabToEnable.SetActive(true);
-        }
+
+        DoorOpened?.Invoke();
     }
 
     public void CloseDoor()
@@ -68,19 +65,5 @@ public class Door : MonoBehaviour, IInteractable
         state = DoorState.Locked;
         animator.SetTrigger("Close");
         AudioManager.Instance.PlayDoorClosedClip();
-        if(prefabToDisable != null)
-        {
-            StartCoroutine(DisablePrefab());
-        }
-    }
-
-    IEnumerator DisablePrefab()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(1);
-            prefabToDisable.SetActive(false);
-            
-        }
     }
 }
