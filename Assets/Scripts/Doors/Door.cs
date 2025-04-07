@@ -16,6 +16,8 @@ public class Door : MonoBehaviour, IInteractable
 
     public GameObject prefabToDisable;
 
+    public GameObject prefabToEnable;
+
     public virtual void Interact()
     {
         switch (state)
@@ -42,6 +44,10 @@ public class Door : MonoBehaviour, IInteractable
         state = DoorState.Open;
         animator.SetTrigger("Open");
         AudioManager.Instance.PlayDoorOpenClip();
+        if(prefabToEnable != null)
+        {
+            prefabToEnable.SetActive(true);
+        }
     }
 
     public void CloseDoor()
