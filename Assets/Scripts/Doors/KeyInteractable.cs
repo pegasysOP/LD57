@@ -5,6 +5,8 @@ public class KeyInteractable : MonoBehaviour, IInteractable
     public KeyDoor keyDoor;
 
     public GameObject prefabToDisable;
+    public GameObject prefabToEnable;
+    public GameObject roomToDisable;
 
     public void Interact()
     {
@@ -15,6 +17,8 @@ public class KeyInteractable : MonoBehaviour, IInteractable
         if(prefabToDisable != null)
         {
             prefabToDisable.SetActive(false);
+            roomToDisable.SetActive(false);
+            prefabToEnable.SetActive(true);
         }
     }
 

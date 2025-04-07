@@ -49,9 +49,9 @@ MonoBehaviour:
   area1: {fileID: 0}
   area2: {fileID: 0}
   areaToDespawn: {fileID: 0}
-  activationDistance: 70
+  activationDistance: 50
   activationAngle: 60
-  tpDistance: 30
+  tpDistance: 15
 --- !u!1001 &3494038341191479728
 PrefabInstance:
   m_ObjectHideFlags: 0
