@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MusicTrigger : MonoBehaviour
 {
+
+    public AudioClip audioClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,7 +19,7 @@ public class MusicTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         this.gameObject.SetActive(false);
-        AudioManager.Instance.PlayCorridoorClip();
+        AudioManager.Instance.PlayMusic(audioClip);
         
     }
 }
