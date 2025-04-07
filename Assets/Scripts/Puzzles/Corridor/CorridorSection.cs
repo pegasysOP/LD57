@@ -59,7 +59,7 @@ public class CorridorSection : MonoBehaviour
 
         // only tp beyond activation distance
         float distanceToPlayer = playerPos.z - transform.position.z;
-        if (distanceToPlayer < tpDistance)
+        if (distanceToPlayer < transform.position.z + tpDistance)
             return;
 
         //move player nearer to start
