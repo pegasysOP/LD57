@@ -2163,6 +2163,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 360829401186777023, guid: 73d764d2f25d9594fac082474a10dccf, type: 3}
+      propertyPath: doorOpenClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bd02ed46c88f5314b97b32e8c143dd18, type: 3}
+    - target: {fileID: 360829401186777023, guid: 73d764d2f25d9594fac082474a10dccf, type: 3}
+      propertyPath: doorCloseClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ad6c9f86f8f1b6478e292f450276555, type: 3}
+    - target: {fileID: 360829401186777023, guid: 73d764d2f25d9594fac082474a10dccf, type: 3}
+      propertyPath: doorLockedClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e8d65f6bbe4e1424581a8ae3856e88e7, type: 3}
+    - target: {fileID: 360829401186777023, guid: 73d764d2f25d9594fac082474a10dccf, type: 3}
+      propertyPath: itemAcquireClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 50a3297e71430b241a26481aee30fcf5, type: 3}
     - target: {fileID: 3226860939777381543, guid: 73d764d2f25d9594fac082474a10dccf, type: 3}
       propertyPath: m_Name
       value: Game Manager

@@ -12,9 +12,14 @@ public class AudioManager : MonoBehaviour
 
     [Header("UI")]
     public AudioClip buttonPressClip;
+    public AudioClip buttonHoverClip;
 
     [Header("Interaction Sounds")]
     public AudioClip selectClip;
+    public AudioClip doorOpenClip;
+    public AudioClip doorCloseClip;
+    public AudioClip itemAcquireClip;
+    public AudioClip doorLockedClip;
 
     [Header("Voice Lines")]
     public AudioClip correctDoorClip;
@@ -36,9 +41,38 @@ public class AudioManager : MonoBehaviour
         UpdateVolume(SettingsUtils.GetMasterVolume());
     }
 
+    //================================ UI =================================
     public void PlayButtonPressedClip()
     {
         sfxSource.clip = buttonPressClip;
+        sfxSource.Play();
+    }
+
+    public void PlayButtonHoverClip()
+    {
+        sfxSource.clip = buttonHoverClip;
+        sfxSource.Play();
+    }
+
+    //================================ Interaction =============================
+    public void PlayDoorOpenClip()
+    {
+        sfxSource.clip = doorOpenClip;
+        sfxSource.Play();
+    }
+    public void PlayDoorClosedClip()
+    {
+        sfxSource.clip = doorCloseClip;
+        sfxSource.Play();
+    }
+    public void PlayItemAcquireClip()
+    {
+        sfxSource.clip = itemAcquireClip;
+        sfxSource.Play();
+    }
+    public void PlayDoorLockedClip()
+    {
+        sfxSource.clip = doorLockedClip;
         sfxSource.Play();
     }
 
@@ -46,12 +80,6 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.clip = selectClip;
         sfxSource.Play();
-    }
-
-    public void PlayMusic(AudioClip clip)
-    {
-        musicSource.clip = clip;
-        musicSource.Play();
     }
 
     public void PlayFootstep()
@@ -71,6 +99,12 @@ public class AudioManager : MonoBehaviour
         sfxSource.Play();
     }
 
+    //================================ Music ==============================================
+    public void PlayMusic(AudioClip clip)
+    {
+        musicSource.clip = clip;
+        musicSource.Play();
+    }
     public void PlayDreamStartClip()
     {
         musicSource.clip = dreamStartClip;

@@ -38,22 +38,26 @@ public class Door : MonoBehaviour, IInteractable
     {
         state = DoorState.Open;
         animator.SetTrigger("Open");
+        AudioManager.Instance.PlayDoorOpenClip();
     }
 
     public void CloseDoor()
     {
         state = DoorState.Closed;
         animator.SetTrigger("Close");
+        AudioManager.Instance.PlayDoorClosedClip();
     }
 
     public void ShowLockedAnimation()
     {
         animator.SetTrigger("Locked");
+        AudioManager.Instance.PlayDoorLockedClip();
     }
 
     public void CloseToLocked()
     {
         state = DoorState.Locked;
         animator.SetTrigger("Close");
+        AudioManager.Instance.PlayDoorClosedClip();
     }
 }
