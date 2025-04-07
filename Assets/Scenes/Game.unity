@@ -9154,6 +9154,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433435215}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &433603685 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 605309582320290466, guid: 7e6a55d27b7c45143b51ea66e4fb6a95, type: 3}
+  m_PrefabInstance: {fileID: 1597217655}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &439652020
 GameObject:
   m_ObjectHideFlags: 0
@@ -12382,6 +12387,7 @@ GameObject:
   - component: {fileID: 632342685}
   - component: {fileID: 632342687}
   - component: {fileID: 632342686}
+  - component: {fileID: 632342688}
   m_Layer: 0
   m_Name: MusicTriggerHiddenWall
   m_TagString: Untagged
@@ -12438,6 +12444,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &632342688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632342684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307b71d1c459c194694ff2e46b24b65a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectToDisable: {fileID: 433603685}
 --- !u!1 &633207247
 GameObject:
   m_ObjectHideFlags: 0
