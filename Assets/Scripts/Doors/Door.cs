@@ -67,6 +67,12 @@ public class Door : MonoBehaviour, IInteractable
         state = DoorState.Locked;
         animator.SetTrigger("Close");
         AudioManager.Instance.PlayDoorClosedClip();
+        StartCoroutine(WaitThenDisableObject());
+    }
+
+    private IEnumerator WaitThenDisableObject()
+    {
+        yield return new WaitForSeconds(1f);
         objectToDisable?.SetActive(false);
     }
 }
