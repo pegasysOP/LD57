@@ -12,10 +12,11 @@ public enum DoorState
 public class Door : MonoBehaviour, IInteractable
 {
     public Animator animator;
-
     public DoorState state = DoorState.Closed;
-
     public UnityEvent DoorOpened;
+
+    public GameObject objectToEnable;
+    public GameObject objectToDisable;
 
     public virtual void Interact()
     {
@@ -43,6 +44,8 @@ public class Door : MonoBehaviour, IInteractable
         state = DoorState.Open;
         animator.SetTrigger("Open");
         AudioManager.Instance.PlayDoorOpenClip();
+        if (objectToEnable != null)
+            objectToEnable.SetActive(true);
 
         DoorOpened?.Invoke();
     }
@@ -65,5 +68,13 @@ public class Door : MonoBehaviour, IInteractable
         state = DoorState.Locked;
         animator.SetTrigger("Close");
         AudioManager.Instance.PlayDoorClosedClip();
+        if (objectToDisable != null)
+            StartCoroutine(WaitThenDisableObject());
+    }
+
+    private IEnumerator WaitThenDisableObject()
+    {
+        yield return new WaitForSeconds(1f);
+        objectToDisable.SetActive(false);
     }
 }
