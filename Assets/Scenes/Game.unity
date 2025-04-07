@@ -5780,6 +5780,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2029162890346293739, guid: a8cf02fc60fbe584998af88d5ad92e98, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1754308342}
+    - targetCorrespondingSourceObject: {fileID: 2029162890346293739, guid: a8cf02fc60fbe584998af88d5ad92e98, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2017552674}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8cf02fc60fbe584998af88d5ad92e98, type: 3}
 --- !u!1 &413875013
@@ -8490,6 +8493,73 @@ Transform:
   - {fileID: 1233852954}
   m_Father: {fileID: 1842278106}
   m_LocalEulerAnglesHint: {x: 0, y: 89.941, z: 0}
+--- !u!1 &632342684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 632342685}
+  - component: {fileID: 632342687}
+  - component: {fileID: 632342686}
+  m_Layer: 0
+  m_Name: MusicTriggerHiddenWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &632342685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632342684}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -19.07, y: 1.311, z: -10.984}
+  m_LocalScale: {x: 12, y: 3, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1464907240}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &632342686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632342684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000e300e1b8d45c459d17f65959e083b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 532002e189b7eb640a76603a167746ef, type: 3}
+--- !u!65 &632342687
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632342684}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &633207247
 GameObject:
   m_ObjectHideFlags: 0
@@ -16681,6 +16751,7 @@ Transform:
   - {fileID: 1842278106}
   - {fileID: 371629602}
   - {fileID: 1165591430}
+  - {fileID: 632342685}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1465555153
@@ -22597,7 +22668,7 @@ GameObject:
   - component: {fileID: 2017552671}
   - component: {fileID: 2017552670}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: MusicTriggerCorridor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22615,6 +22686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000e300e1b8d45c459d17f65959e083b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 16677752b26fdc948bd84e81551e5348, type: 3}
 --- !u!65 &2017552671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22644,12 +22716,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017552669}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.18, y: -19.827, z: 14.26}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.03999996, y: 0.3730011, z: -0.9989996}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 936776681}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2017801388
 GameObject:
@@ -23907,4 +23979,3 @@ SceneRoots:
   - {fileID: 1593321013}
   - {fileID: 412457381}
   - {fileID: 1464907240}
-  - {fileID: 2017552674}
