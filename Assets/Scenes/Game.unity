@@ -1481,6 +1481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorDown
       objectReference: {fileID: 0}
+    - target: {fileID: 605309582320290466, guid: 7e6a55d27b7c45143b51ea66e4fb6a95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1715446258646803116, guid: 7e6a55d27b7c45143b51ea66e4fb6a95, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -20688,7 +20692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6367572428529005002, guid: b2e62309f80c63b498a89a1fe1930089, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.45
+      value: -5.39
       objectReference: {fileID: 0}
     - target: {fileID: 6367572428529005002, guid: b2e62309f80c63b498a89a1fe1930089, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23175,7 +23179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 300425700414431381, guid: e75de87f43dac804f9c5038600129992, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.894
+      value: 12.829
       objectReference: {fileID: 0}
     - target: {fileID: 300425700414431381, guid: e75de87f43dac804f9c5038600129992, type: 3}
       propertyPath: m_LocalPosition.y
