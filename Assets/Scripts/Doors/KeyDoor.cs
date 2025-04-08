@@ -3,6 +3,7 @@ using UnityEngine;
 public class KeyDoor : Door
 {
     public GameObject keyObject;
+    public GameObject facade;
 
     private bool hasKey = false;
 
@@ -15,6 +16,7 @@ public class KeyDoor : Door
                 keyObject.SetActive(true);
                 GameManager.Instance.hud.ShowKeyIcon(false);
                 OpenDoor();
+                facade.SetActive(true);
             }
             else
             {

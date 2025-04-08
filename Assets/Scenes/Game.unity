@@ -15001,6 +15001,11 @@ Transform:
   - {fileID: 301315379}
   m_Father: {fileID: 1753369892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &735966247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4489651431914366974, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+  m_PrefabInstance: {fileID: 2036531120}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &756118070
 GameObject:
   m_ObjectHideFlags: 0
@@ -34177,6 +34182,14 @@ PrefabInstance:
       propertyPath: prefabToDisable
       value: 
       objectReference: {fileID: 1842278105}
+    - target: {fileID: 4489651431914366974, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434468935405959475, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: facade
+      value: 
+      objectReference: {fileID: 735966247}
     - target: {fileID: 7434468935405959475, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
       propertyPath: objectToEnable
       value: 
