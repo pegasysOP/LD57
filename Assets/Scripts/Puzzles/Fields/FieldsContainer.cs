@@ -18,7 +18,8 @@ public class FieldsContainer : MonoBehaviour
         Vector3 playerPos = GameManager.Instance.playerController.transform.position;
 
         // check player facing away from entrance
-        float distanceToPlayer = Vector3.Distance(playerPos, transform.position);
+        //float distanceToPlayer = Vector3.Distance(playerPos, transform.position);
+        float distanceToPlayer = playerPos.x - transform.position.x;
         if (distanceToPlayer < activationDistance)
             return;
 
