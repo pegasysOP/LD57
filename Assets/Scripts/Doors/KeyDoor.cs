@@ -4,6 +4,7 @@ public class KeyDoor : Door
 {
     public GameObject keyObject;
     public GameObject facade;
+    public AudioClip horseClip;
 
     private bool hasKey = false;
 
@@ -18,6 +19,10 @@ public class KeyDoor : Door
                 OpenDoor();
                 facade.SetActive(true);
                 hasKey = false;
+                if(horseClip != null)
+                {
+                    AudioManager.Instance.PlayMusic(horseClip);
+                }
             }
             else
             {
