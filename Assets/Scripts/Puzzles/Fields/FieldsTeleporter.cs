@@ -9,8 +9,8 @@ public class FieldsTeleporter : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Vector3 playerPosition = GameManager.Instance.playerController.transform.position;
-            playerPosition.x = destinationTransform.position.x;
-            GameManager.Instance.playerController.transform.position = playerPosition;
+            Vector3 offset = playerPosition - transform.position;
+            GameManager.Instance.playerController.transform.position = destinationTransform.position + offset;
         }
     }
 }
