@@ -77,4 +77,16 @@ public class Door : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(1f);
         objectToDisable.SetActive(false);
     }
+
+    public void InstantLock()
+    {
+        state = DoorState.Locked;
+        animator.SetTrigger("InstantLock");
+    }
+
+    public void InstantClose()
+    {
+        state = DoorState.Closed;
+        animator.SetTrigger("InstantClose");
+    }
 }
