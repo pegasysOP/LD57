@@ -20,8 +20,8 @@ public class MusicTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        this.gameObject.SetActive(false);
         AudioManager.Instance.PlayMusic(audioClip);
+        this.gameObject.SetActive(false);
 
         if(prefabsToDisable != null && prefabsToDisable.Length != 0)
         {
