@@ -6,6 +6,7 @@ public class Hud : MonoBehaviour
     public GameObject interactPrompt;
     public GameObject keyIcon;
     public GameObject cameraOverlay;
+    public CanvasGroup fadeToBlack;
 
     public void ShowInteractPrompt(bool show)
     {

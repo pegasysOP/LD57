@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
 public class ManyRoomsDoorTrigger : MonoBehaviour
@@ -8,6 +9,10 @@ public class ManyRoomsDoorTrigger : MonoBehaviour
 
     private Door selectedDoor;
     private List<ManyDoorsDoorway> otherDoorways;
+
+    private int counter = 0;
+
+    public UnityEvent LimitReached;
 
     public void Init(Door selectedDoor, List<ManyDoorsDoorway> otherDoorways)
     {
@@ -19,6 +24,10 @@ public class ManyRoomsDoorTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            counter++;
+            if (counter >= 2)
+                LimitReached?.Invoke();
+
             trigger.enabled = false;
 
             selectedDoor.CloseToLocked();

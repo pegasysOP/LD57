@@ -81,7 +81,7 @@ public class Door : MonoBehaviour, IInteractable
     public void InstantLock()
     {
         state = DoorState.Locked;
-        animator.SetTrigger("InstantLock");
+        animator.SetTrigger("InstantClose");
     }
 
     public void InstantClose()
