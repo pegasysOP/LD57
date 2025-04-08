@@ -30,7 +30,8 @@ public class ManyRoomsDoorTrigger : MonoBehaviour
 
             trigger.enabled = false;
 
-            selectedDoor.CloseToLocked();
+            if(selectedDoor != null)
+                selectedDoor.CloseToLocked();
 
             foreach (ManyDoorsDoorway doorway in otherDoorways)
             {
