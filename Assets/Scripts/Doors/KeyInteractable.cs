@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class KeyInteractable : MonoBehaviour, IInteractable
@@ -14,16 +15,23 @@ public class KeyInteractable : MonoBehaviour, IInteractable
         gameObject.SetActive(false);
         GameManager.Instance.hud.ShowKeyIcon(true);
         AudioManager.Instance.PlayItemAcquireClip();
-        if(prefabToDisable != null)
+        if (prefabToDisable != null)
         {
-            prefabToDisable.SetActive(false);
-            roomToDisable.SetActive(false);
-            prefabToEnable.SetActive(true);
+            StartCoroutine(AsyncChangeObjects());
         }
     }
 
     public bool IsInteractable()
     {
         return true;
+    }
+
+    private IEnumerator AsyncChangeObjects()
+    {
+        prefabToDisable.SetActive(false);
+        roomToDisable.SetActive(false);
+        prefabToEnable.SetActive(true);
+
+        yield break;
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CorridorSection : MonoBehaviour
@@ -48,9 +49,7 @@ public class CorridorSection : MonoBehaviour
 
         // switch over to the next area
         activated = true;
-        area1.SetActive(false);
-        area2.SetActive(true);
-        areaToDespawn.SetActive(false);
+        StartCoroutine(AsyncChangeObjects());
     }
 
     private void Shift()
@@ -76,5 +75,14 @@ public class CorridorSection : MonoBehaviour
     {
         complete = true;
         spawner.SetComplete();
+    }
+
+    private IEnumerator AsyncChangeObjects()
+    {
+        area1.SetActive(false);
+        area2.SetActive(true);
+        areaToDespawn.SetActive(false);
+
+        yield break;
     }
 }
