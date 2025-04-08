@@ -79,6 +79,6 @@ public class ManyDoorsContainer : MonoBehaviour
         }
 
         GameManager.Instance.hud.fadeToBlack.alpha = 1f;
-        SceneUtils.LoadMenuScene();
+        SceneUtils.LoadCreditScene();
     }
 }
