@@ -404,6 +404,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: {fileID: 1305973689165655955}
+  LimitReached:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8052841976418038987
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,6 +457,7 @@ MonoBehaviour:
   teleporter: {fileID: 2580511528807908041}
   aheadRoom: {fileID: 882168006368849550}
   mainRoom: {fileID: 2887479968200262568}
+  fadeDuration: 2
   exitDoorways:
   - {fileID: 5132272113764856845}
   - {fileID: 2316895915775712874}
@@ -653,6 +657,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5513395396158233392, guid: 5e01995fff50a6c4bab9091875562fd5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6164405131896918073, guid: 5e01995fff50a6c4bab9091875562fd5, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7443493645398485379, guid: 5e01995fff50a6c4bab9091875562fd5, type: 3}
