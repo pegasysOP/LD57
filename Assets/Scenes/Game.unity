@@ -13115,7 +13115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000e300e1b8d45c459d17f65959e083b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabsToDisable: []
+  prefabsToDisable:
+  - {fileID: 632342684}
   audioClip: {fileID: 8300000, guid: 532002e189b7eb640a76603a167746ef, type: 3}
 --- !u!65 &632342687
 BoxCollider:
@@ -35285,7 +35286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000e300e1b8d45c459d17f65959e083b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabsToDisable: []
+  prefabsToDisable:
+  - {fileID: 2017552669}
   audioClip: {fileID: 8300000, guid: 16677752b26fdc948bd84e81551e5348, type: 3}
 --- !u!65 &2017552671
 BoxCollider:
