@@ -10,7 +10,8 @@ public class MovingWallRoom : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             frontDoorCloseTrigger.enabled = false;
-            frontDoor.CloseToLocked();
+            if(frontDoor.state != DoorState.Locked)
+                frontDoor.CloseToLocked();
         }
     }
 }
