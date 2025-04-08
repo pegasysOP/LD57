@@ -3942,6 +3942,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000e300e1b8d45c459d17f65959e083b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabsToDisable:
+  - {fileID: 1222097819}
+  - {fileID: 251836657}
+  - {fileID: 1680229075}
+  - {fileID: 795174927}
+  - {fileID: 1404375659}
+  - {fileID: 192772326}
   audioClip: {fileID: 8300000, guid: 9b49e2214a32fe848a46887887ddbefe, type: 3}
 --- !u!65 &192772329
 BoxCollider:
@@ -5684,6 +5691,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000e300e1b8d45c459d17f65959e083b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabsToDisable:
+  - {fileID: 1222097819}
+  - {fileID: 251836657}
+  - {fileID: 1680229075}
+  - {fileID: 795174927}
+  - {fileID: 1404375659}
+  - {fileID: 192772326}
   audioClip: {fileID: 8300000, guid: 9b49e2214a32fe848a46887887ddbefe, type: 3}
 --- !u!65 &251836660
 BoxCollider:
@@ -13101,6 +13115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000e300e1b8d45c459d17f65959e083b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabsToDisable: []
   audioClip: {fileID: 8300000, guid: 532002e189b7eb640a76603a167746ef, type: 3}
 --- !u!65 &632342687
 BoxCollider:
@@ -16071,6 +16086,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000e300e1b8d45c459d17f65959e083b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabsToDisable:
+  - {fileID: 1222097819}
+  - {fileID: 251836657}
+  - {fileID: 1680229075}
+  - {fileID: 795174927}
+  - {fileID: 1404375659}
+  - {fileID: 192772326}
   audioClip: {fileID: 8300000, guid: 9b49e2214a32fe848a46887887ddbefe, type: 3}
 --- !u!65 &795174930
 BoxCollider:
@@ -22588,6 +22610,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d96e693a27db7b44a502c79e6f29115, type: 3}
+--- !u!1 &1222097819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2566834904547593492, guid: abcb0675db0334f469c1b000781e18d3, type: 3}
+  m_PrefabInstance: {fileID: 1797900915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1225119921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25884,6 +25911,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000e300e1b8d45c459d17f65959e083b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabsToDisable:
+  - {fileID: 1222097819}
+  - {fileID: 251836657}
+  - {fileID: 1680229075}
+  - {fileID: 795174927}
+  - {fileID: 1404375659}
+  - {fileID: 192772326}
   audioClip: {fileID: 8300000, guid: 9b49e2214a32fe848a46887887ddbefe, type: 3}
 --- !u!65 &1404375662
 BoxCollider:
@@ -29650,6 +29684,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000e300e1b8d45c459d17f65959e083b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabsToDisable:
+  - {fileID: 1222097819}
+  - {fileID: 251836657}
+  - {fileID: 1680229075}
+  - {fileID: 795174927}
+  - {fileID: 1404375659}
+  - {fileID: 192772326}
   audioClip: {fileID: 8300000, guid: 9b49e2214a32fe848a46887887ddbefe, type: 3}
 --- !u!65 &1680229078
 BoxCollider:
@@ -35236,6 +35277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000e300e1b8d45c459d17f65959e083b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabsToDisable: []
   audioClip: {fileID: 8300000, guid: 16677752b26fdc948bd84e81551e5348, type: 3}
 --- !u!65 &2017552671
 BoxCollider:
