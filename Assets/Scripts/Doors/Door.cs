@@ -74,7 +74,7 @@ public class Door : MonoBehaviour, IInteractable
 
     private IEnumerator WaitThenDisableObject()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         objectToDisable.SetActive(false);
     }
 
