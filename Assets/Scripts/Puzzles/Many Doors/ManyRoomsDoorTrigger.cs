@@ -33,10 +33,14 @@ public class ManyRoomsDoorTrigger : MonoBehaviour
             if(selectedDoor != null)
                 selectedDoor.CloseToLocked();
 
-            foreach (ManyDoorsDoorway doorway in otherDoorways)
+            if(otherDoorways != null)
             {
-                doorway.gameObject.SetActive(false);
+                foreach (ManyDoorsDoorway doorway in otherDoorways)
+                {
+                    doorway.gameObject.SetActive(false);
+                }
             }
+            
         }
     }
 
