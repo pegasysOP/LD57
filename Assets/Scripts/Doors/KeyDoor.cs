@@ -17,6 +17,7 @@ public class KeyDoor : Door
                 GameManager.Instance.hud.ShowKeyIcon(false);
                 OpenDoor();
                 facade.SetActive(true);
+                hasKey = false;
             }
             else
             {
