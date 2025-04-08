@@ -6,7 +6,7 @@ public class ManyDoorsDoorway : MonoBehaviour
 {
     public Door door;
 
-    public UnityEvent<Vector3> DoorOpened;
+    public UnityEvent<ManyDoorsDoorway> DoorOpened;
 
     private void Awake()
     {
@@ -15,6 +15,6 @@ public class ManyDoorsDoorway : MonoBehaviour
 
     private void OnDoorOpened()
     {
-        DoorOpened?.Invoke(transform.position);
+        DoorOpened?.Invoke(this);
     }
 }
