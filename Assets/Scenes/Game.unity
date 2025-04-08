@@ -31072,6 +31072,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2566834904547593492, guid: abcb0675db0334f469c1b000781e18d3, type: 3}
+      propertyPath: m_Name
+      value: CubeField
+      objectReference: {fileID: 0}
     - target: {fileID: 3501102189426270446, guid: abcb0675db0334f469c1b000781e18d3, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -35675,6 +35679,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -3.15
       objectReference: {fileID: 0}
+    - target: {fileID: 1323307115026637540, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1035
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323307115026637540, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1965785227907842348, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.2
@@ -35715,6 +35727,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2156204741316257542, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0387
+      objectReference: {fileID: 0}
+    - target: {fileID: 2156204741316257542, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0229
+      objectReference: {fileID: 0}
     - target: {fileID: 3095389990163260156, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
       propertyPath: roomToDisable
       value: 
@@ -35727,8 +35747,52 @@ PrefabInstance:
       propertyPath: prefabToDisable
       value: 
       objectReference: {fileID: 1842278105}
+    - target: {fileID: 3865238921214084273, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0962
+      objectReference: {fileID: 0}
+    - target: {fileID: 3865238921214084273, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185289187718136147, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185289187718136147, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0393
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185289187718136147, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0244
+      objectReference: {fileID: 0}
     - target: {fileID: 4489651431914366974, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176400407310914739, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0272
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176400407310914739, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761593260623995387, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0078
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761593260623995387, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6930765086422627046, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0176
+      objectReference: {fileID: 0}
+    - target: {fileID: 6930765086422627046, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7434468935405959475, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
@@ -35747,6 +35811,14 @@ PrefabInstance:
       propertyPath: objectToDisable
       value: 
       objectReference: {fileID: 1623218462}
+    - target: {fileID: 7497376369825089454, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0193
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497376369825089454, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8629370629402670075, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
       propertyPath: m_Name
       value: Museum Container
