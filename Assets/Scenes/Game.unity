@@ -3943,12 +3943,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabsToDisable:
-  - {fileID: 1222097819}
+  - {fileID: 192772326}
   - {fileID: 251836657}
   - {fileID: 1680229075}
   - {fileID: 795174927}
   - {fileID: 1404375659}
-  - {fileID: 192772326}
   audioClip: {fileID: 8300000, guid: 9b49e2214a32fe848a46887887ddbefe, type: 3}
 --- !u!65 &192772329
 BoxCollider:
@@ -5692,7 +5691,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabsToDisable:
-  - {fileID: 1222097819}
   - {fileID: 251836657}
   - {fileID: 1680229075}
   - {fileID: 795174927}
@@ -16088,12 +16086,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabsToDisable:
-  - {fileID: 1222097819}
+  - {fileID: 192772326}
   - {fileID: 251836657}
   - {fileID: 1680229075}
   - {fileID: 795174927}
   - {fileID: 1404375659}
-  - {fileID: 192772326}
   audioClip: {fileID: 8300000, guid: 9b49e2214a32fe848a46887887ddbefe, type: 3}
 --- !u!65 &795174930
 BoxCollider:
@@ -22611,11 +22608,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d96e693a27db7b44a502c79e6f29115, type: 3}
---- !u!1 &1222097819 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2566834904547593492, guid: abcb0675db0334f469c1b000781e18d3, type: 3}
-  m_PrefabInstance: {fileID: 1797900915}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1225119921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25913,12 +25905,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabsToDisable:
-  - {fileID: 1222097819}
+  - {fileID: 192772326}
   - {fileID: 251836657}
   - {fileID: 1680229075}
   - {fileID: 795174927}
   - {fileID: 1404375659}
-  - {fileID: 192772326}
   audioClip: {fileID: 8300000, guid: 9b49e2214a32fe848a46887887ddbefe, type: 3}
 --- !u!65 &1404375662
 BoxCollider:
@@ -29686,12 +29677,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabsToDisable:
-  - {fileID: 1222097819}
+  - {fileID: 192772326}
   - {fileID: 251836657}
   - {fileID: 1680229075}
   - {fileID: 795174927}
   - {fileID: 1404375659}
-  - {fileID: 192772326}
   audioClip: {fileID: 8300000, guid: 9b49e2214a32fe848a46887887ddbefe, type: 3}
 --- !u!65 &1680229078
 BoxCollider:
@@ -31031,7 +31021,7 @@ PrefabInstance:
     - target: {fileID: 1991926248100692199, guid: abcb0675db0334f469c1b000781e18d3, type: 3}
       propertyPath: 'prefabsToDisable.Array.data[0]'
       value: 
-      objectReference: {fileID: 1222097819}
+      objectReference: {fileID: 0}
     - target: {fileID: 2117793051903707817, guid: abcb0675db0334f469c1b000781e18d3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -31093,7 +31083,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1464907239}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2566834904547593492, guid: abcb0675db0334f469c1b000781e18d3, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2117793051903707817, guid: abcb0675db0334f469c1b000781e18d3, type: 3}
       insertIndex: -1
@@ -35799,6 +35790,10 @@ PrefabInstance:
       propertyPath: facade
       value: 
       objectReference: {fileID: 735966247}
+    - target: {fileID: 7434468935405959475, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
+      propertyPath: horseClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 685417c29e2bce849829ce3f20d90568, type: 3}
     - target: {fileID: 7434468935405959475, guid: 9f50240f6ffd754489f323450e0a2b63, type: 3}
       propertyPath: objectToEnable
       value: 
