@@ -56,13 +56,13 @@ public class ManyDoorsContainer : MonoBehaviour
         Vector3 aheadRoomPos = aheadRoom.transform.localPosition - mainRoom.transform.localPosition;
         aheadRoomPos.z = mainRoom.transform.localPosition.z + selectedDoorway.transform.localPosition.z;
         aheadRoom.transform.localPosition = aheadRoomPos;
-        foreach(ManyDoorsDoorway door in exitDoorways)
-        {
-            door.door.InstantClose();
-        }
 
         List<ManyDoorsDoorway> otherDoorways = new List<ManyDoorsDoorway>(exitDoorways);
         otherDoorways.Remove(selectedDoorway);
+
+        foreach(ManyDoorsDoorway doorway in otherDoorways)
+            doorway.door.InstantClose();
+
 
         doorTrigger.Init(selectedDoorway.door, otherDoorways);
     }
