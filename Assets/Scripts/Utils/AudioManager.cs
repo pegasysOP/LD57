@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 
 public class AudioManager : MonoBehaviour
 {
     public AudioSource musicSource;
     public AudioSource sfxSource;
     public AudioSource bubbleSource;
+    public AudioSource fadeSource;
+
+    private bool isMainSourceActive = true;
 
     [Header("Player")]
     public List<AudioClip> footsteps = new List<AudioClip>();
@@ -36,6 +40,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip manyDoorsClip;
 
     public static AudioManager Instance;
+
+    private Coroutine currentCoroutine;
 
     public void Init()
     {
@@ -119,6 +125,7 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.clip = clip;
         musicSource.Play();
+        //StartFadeOut(musicSource, 5);
     }
     public void PlayDreamStartClip()
     {
@@ -130,16 +137,137 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.clip = corridorClip;
         musicSource.Play();
+        //StartCoroutine(CrossFade( corridorClip, 5));
     }
 
     public void UpdateVolume(float value)
     {
         musicSource.volume = value / 3;
+        fadeSource.volume = value / 3;
         sfxSource.volume = value;
         if(bubbleSource != null)
         {
              bubbleSource.volume = value;
         }
        
+    }
+
+    //==================== Fading ==================
+
+    public void StartFadeIn(AudioSource source, AudioClip clip, float duration)
+    {
+        if (currentCoroutine != null)
+        {
+            StopCoroutine(currentCoroutine);
+        }
+        currentCoroutine = StartCoroutine(FadeIn(source, clip, duration));
+    }
+
+    private IEnumerator FadeIn(AudioSource source, AudioClip clipToFadeIn, float fadeDuration)
+    {
+        if(clipToFadeIn == null)
+        {
+            Debug.LogError("ERROR: no clip to fade in");
+        }
+        //If a song is currently playing stop it. 
+        //NOTE: if you want to slowly fade out that song then use CrossFade instead of FadeIn
+        source.Stop();
+
+        float initialVolume = SettingsUtils.GetMasterVolume() / 3;
+        source.volume = 0;
+
+        source.clip = clipToFadeIn;
+        source.Play();
+
+        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        {
+            source.volume = Mathf.Lerp(0f, initialVolume, t / fadeDuration);
+            yield return null;
+        }
+        source.volume = initialVolume;
+        //source.volume = Mathf.Lerp(0, SettingsUtils.GetMasterVolume(), fadeDuration);
+    }
+
+    public void StartFadeOut(AudioSource source, float duration)
+    {
+        if (currentCoroutine != null)
+        {
+            StopCoroutine(currentCoroutine);
+        }
+        currentCoroutine = StartCoroutine(FadeOut(source, duration));
+    }
+
+    private IEnumerator FadeOut(AudioSource source, float fadeOutDuration)
+    {
+        if(source.clip == null)
+        {
+            Debug.LogError("ERROR: no clip to fade out");
+        }
+
+        for(float t = 0; t < fadeOutDuration; t+= Time.deltaTime)
+        {
+            source.volume = Mathf.Lerp(SettingsUtils.GetMasterVolume() / 3, 0f, t / fadeOutDuration);
+            yield return null;
+        }
+
+        source.volume = 0;
+        source.Stop();
+    }
+
+    public void StartCrossFade(AudioClip clipToFadeIn, float fadeOutDuration)
+    {
+        if (currentCoroutine != null)
+        {
+            StopCoroutine(currentCoroutine);
+        }
+        currentCoroutine = StartCoroutine(CrossFade(clipToFadeIn, fadeOutDuration));
+    }
+
+    private IEnumerator CrossFade(AudioClip fadeInClip, float fadeDuration)
+    {
+
+        AudioSource fromSource = isMainSourceActive ? musicSource : fadeSource;
+        AudioSource toSource = isMainSourceActive ? fadeSource : musicSource;
+
+
+        if (fromSource.clip == null)
+        {
+            Debug.LogError("ERROR: No current clip to fade out.");
+        }
+        if (fadeInClip == null)
+        {
+            Debug.LogError("ERROR: No clip to fade in.");
+        }
+
+        if(fromSource.clip == fadeInClip)
+        {
+            Debug.LogWarning("WARNING: you are switching to the same song as you are fading out ");
+        }
+
+        isMainSourceActive = !isMainSourceActive;
+
+        float fromStartVolume = fromSource.volume; // Get current playing source's volume
+        float toTargetVolume = SettingsUtils.GetMasterVolume() / 3f;
+
+        // Set up new clip on the inactive source
+        toSource.clip = fadeInClip;
+        toSource.volume = 0f;
+        toSource.Play();
+
+        Debug.Log(fromSource.clip.name + " " + toSource.clip.name);
+
+        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        {
+            float normalized = t / fadeDuration;
+            fromSource.volume = Mathf.Lerp(fromStartVolume, 0f, normalized);
+            toSource.volume = Mathf.Lerp(0f, toTargetVolume, normalized);
+            yield return null;
+        }
+
+        fromSource.Stop();
+        fromSource.volume = 0f;
+        toSource.volume = toTargetVolume;
+
+        currentCoroutine = null;
     }
 }
