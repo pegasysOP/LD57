@@ -225,42 +225,45 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator CrossFade(AudioClip fadeInClip, float fadeDuration)
     {
+        if (fadeInClip == null)
+        {
+            Debug.LogError("CrossFade: No clip provided.");
+            yield break;
+        }
 
-        AudioSource fromSource = isMainSourceActive ? musicSource : fadeSource;
-        AudioSource toSource = isMainSourceActive ? fadeSource : musicSource;
-
+        AudioSource fromSource = musicSource;
+        AudioSource toSource = fadeSource;
 
         if (fromSource.clip == null)
         {
-            Debug.LogError("ERROR: No current clip to fade out.");
+            Debug.LogError("CrossFade: No currently playing clip.");
+            yield break;
         }
-        if (fadeInClip == null)
+
+        // If the same clip is requested again, we can optionally skip
+        if (fromSource.clip == fadeInClip)
         {
-            Debug.LogError("ERROR: No clip to fade in.");
+            Debug.LogWarning("WARNING: you are trying to switch to the same song as you are fading out ");
         }
 
-        if(fromSource.clip == fadeInClip)
-        {
-            Debug.LogWarning("WARNING: you are switching to the same song as you are fading out ");
-        }
+        float masterVolume = SettingsUtils.GetMasterVolume();
+        float fromStartVolume = fromSource.volume > 0f ? fromSource.volume : masterVolume / 3f;
+        float toTargetVolume = masterVolume / 3f;
 
-        isMainSourceActive = !isMainSourceActive;
-
-        float fromStartVolume = fromSource.volume; // Get current playing source's volume
-        float toTargetVolume = SettingsUtils.GetMasterVolume() / 3f;
-
-        // Set up new clip on the inactive source
+        // Setup new source
         toSource.clip = fadeInClip;
         toSource.volume = 0f;
         toSource.Play();
 
-        Debug.Log(fromSource.clip.name + " " + toSource.clip.name);
-
-        for (float t = 0; t < fadeDuration; t += Time.deltaTime)
+        float t = 0f;
+        while (t < fadeDuration)
         {
-            float normalized = t / fadeDuration;
+            t += Time.deltaTime;
+            float normalized = Mathf.Clamp01(t / fadeDuration);
+
             fromSource.volume = Mathf.Lerp(fromStartVolume, 0f, normalized);
             toSource.volume = Mathf.Lerp(0f, toTargetVolume, normalized);
+
             yield return null;
         }
 
@@ -268,6 +271,12 @@ public class AudioManager : MonoBehaviour
         fromSource.volume = 0f;
         toSource.volume = toTargetVolume;
 
+        // Swap roles after fade completes
+        var temp = musicSource;
+        musicSource = fadeSource;
+        fadeSource = temp;
+
         currentCoroutine = null;
+
     }
 }
