@@ -250,7 +250,7 @@ public class AudioManager : MonoBehaviour
         float fromStartVolume = fromSource.volume > 0f ? fromSource.volume : masterVolume / 3f;
         float toTargetVolume = masterVolume / 3f;
 
-        // Setup new source
+        // Setup fade in 
         toSource.clip = fadeInClip;
         toSource.volume = 0f;
         toSource.Play();
