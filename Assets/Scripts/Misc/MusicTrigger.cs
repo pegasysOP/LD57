@@ -24,7 +24,7 @@ public class MusicTrigger : MonoBehaviour
         //If we are alerady playing the correct song then don't retrigger this
         if (AudioManager.Instance.musicSource.clip != audioClip || AudioManager.Instance.fadeSource.clip != audioClip)
         {
-            AudioManager.Instance.StartCrossFade(audioClip, 5f);
+            AudioManager.Instance.StartCrossFade(audioClip, 2f);
             //StartCoroutine(AudioManager.Instance.FadeIn(AudioManager.Instance.musicSource, audioClip, 5f));
 
         }
