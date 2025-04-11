@@ -51,9 +51,44 @@ public class AudioManager : MonoBehaviour
         UpdateVolume(SettingsUtils.GetMasterVolume());
     }
 
+    //============================ Utility ==============================
     public bool IsClipPlaying(AudioSource source, AudioClip clip)
     {
         return source.isPlaying && source.clip == clip;
+    }
+
+    public void PlayMusic(AudioClip clip)
+    {
+        Play(musicSource, clip);
+    }
+
+    public void Play(AudioSource source, AudioClip clip, bool fadeIn = false, bool crossFade = false)
+    {
+        if (fadeIn)
+        {
+            StartFadeIn(source, clip, 2f);
+        }
+        else if (crossFade)
+        {
+            StartCrossFade(clip, 2f);
+        }
+        else
+        {
+            source.clip = clip;
+            source.Play();
+        }
+    }
+
+    public void Stop(AudioSource source, bool fadeOut = false)
+    {
+        if (fadeOut)
+        {
+            StartFadeOut(source, 2f);
+        }
+        else
+        {
+            source.Stop();
+        }
     }
 
     //================================ UI =================================
@@ -127,16 +162,7 @@ public class AudioManager : MonoBehaviour
     }
 
     //================================ Music ==============================================
-    public void PlayMusic(AudioClip clip)
-    {
-        Play(musicSource, clip);
-    }
-
-    public void Play(AudioSource source, AudioClip clip)
-    {
-        source.clip = clip;
-        source.Play();
-    }
+    
     public void PlayDreamStartClip()
     {
         musicSource.clip = dreamStartClip;
