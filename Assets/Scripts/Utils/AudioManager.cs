@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http;
 using UnityEngine;
 using static Unity.VisualScripting.Member;
 
@@ -48,6 +49,11 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         PlayDreamStartClip();
         UpdateVolume(SettingsUtils.GetMasterVolume());
+    }
+
+    public bool IsClipPlaying(AudioSource source, AudioClip clip)
+    {
+        return source.isPlaying && source.clip == clip;
     }
 
     //================================ UI =================================
@@ -123,9 +129,13 @@ public class AudioManager : MonoBehaviour
     //================================ Music ==============================================
     public void PlayMusic(AudioClip clip)
     {
-        musicSource.clip = clip;
-        musicSource.Play();
-        //StartFadeOut(musicSource, 5);
+        Play(musicSource, clip);
+    }
+
+    public void Play(AudioSource source, AudioClip clip)
+    {
+        source.clip = clip;
+        source.Play();
     }
     public void PlayDreamStartClip()
     {
