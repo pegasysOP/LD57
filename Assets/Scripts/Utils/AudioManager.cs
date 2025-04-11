@@ -44,6 +44,8 @@ public class AudioManager : MonoBehaviour
 
     private Coroutine currentCoroutine;
 
+    public enum FadeType { NONE, FADE_IN, FADE_OUT, CROSS_FADE }
+
     public void Init()
     {
         Instance = this;
@@ -62,15 +64,19 @@ public class AudioManager : MonoBehaviour
         Play(musicSource, clip);
     }
 
-    public void Play(AudioSource source, AudioClip clip, bool fadeIn = false, bool crossFade = false)
+    public void Play(AudioSource source, AudioClip clip, FadeType fadeType = FadeType.NONE, float fadeTime = 2f)
     {
-        if (fadeIn)
+        if (fadeType == FadeType.FADE_IN)
         {
-            StartFadeIn(source, clip, 2f);
+            StartFadeIn(source, clip, fadeTime);
         }
-        else if (crossFade)
+        else if (fadeType == FadeType.CROSS_FADE)
         {
-            StartCrossFade(clip, 2f);
+            StartCrossFade(clip, fadeTime);
+        }
+        else if(fadeType == FadeType.FADE_OUT)
+        {
+            Debug.LogError("ERROR: Play does not support FADE_OUT");
         }
         else
         {
@@ -79,11 +85,15 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void Stop(AudioSource source, bool fadeOut = false)
+    public void Stop(AudioSource source, FadeType fadeType = FadeType.NONE, float fadeTime = 2f)
     {
-        if (fadeOut)
+        if (fadeType == FadeType.FADE_OUT)
         {
-            StartFadeOut(source, 2f);
+            StartFadeOut(source, fadeTime);
+        }
+        else if (fadeType == FadeType.FADE_IN || fadeType == FadeType.CROSS_FADE)
+        {
+            Debug.LogError("ERROR: Stop only supports FADE_IN and NONE for fadeType");
         }
         else
         {
