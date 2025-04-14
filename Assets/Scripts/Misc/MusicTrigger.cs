@@ -24,7 +24,7 @@ public class MusicTrigger : MonoBehaviour
         //If we are alerady playing the correct song then don't retrigger this
         if (AudioManager.Instance.musicSource.clip != audioClip || AudioManager.Instance.fadeSource.clip != audioClip)
         {
-            AudioManager.Instance.Play(AudioManager.Instance.musicSource, audioClip, AudioManager.FadeType.CROSS_FADE);
+            AudioManager.Instance.Play(AudioManager.Instance.musicSource, audioClip, AudioManager.FadeType.CrossFade);
         }
 
         Debug.Log("On Trigger Enter after cross fade- " + audioClip.name);

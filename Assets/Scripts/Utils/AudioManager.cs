@@ -11,8 +11,6 @@ public class AudioManager : MonoBehaviour
     public AudioSource bubbleSource;
     public AudioSource fadeSource;
 
-    private bool isMainSourceActive = true;
-
     [Header("Player")]
     public List<AudioClip> footsteps = new List<AudioClip>();
 
@@ -44,7 +42,7 @@ public class AudioManager : MonoBehaviour
 
     private Coroutine currentCoroutine;
 
-    public enum FadeType { NONE, FADE_IN, FADE_OUT, CROSS_FADE }
+    public enum FadeType { None, FadeIn, CrossFade }
 
     public void Init()
     {
@@ -64,27 +62,27 @@ public class AudioManager : MonoBehaviour
         Play(musicSource, clip);
     }
 
-    public void Play(AudioSource source, AudioClip clip, FadeType fadeType = FadeType.NONE, float fadeTime = 2f, bool isDucking = false)
+    public void Play(AudioSource source, AudioClip clip, FadeType fadeType = FadeType.None, float fadeTime = 2f, bool isDucking = false)
     {
+        if (source == null || clip == null)
+        {
+            Debug.LogError("ERROR: You must provide an audio source and clip to play on it");
+        }
         if (isDucking)
         {
-            if(fadeType != FadeType.NONE)
+            if(fadeType != FadeType.None)
             {
                 Debug.LogError("ERROR: Simultaneously ducking and fading is not supported!");
             }
             StartDuckAudio(source);
         }
-        if (fadeType == FadeType.FADE_IN)
+        else if (fadeType == FadeType.FadeIn)
         {
             StartFadeIn(source, clip, fadeTime);
         }
-        else if (fadeType == FadeType.CROSS_FADE)
+        else if (fadeType == FadeType.CrossFade)
         {
             StartCrossFade(clip, fadeTime);
-        }
-        else if(fadeType == FadeType.FADE_OUT)
-        {
-            Debug.LogError("ERROR: Play does not support FADE_OUT");
         }
         else
         {
@@ -93,15 +91,15 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void Stop(AudioSource source, FadeType fadeType = FadeType.NONE, float fadeTime = 2f)
+    public void Stop(AudioSource source, bool fadeOutEnabled, float fadeTime = 2f)
     {
-        if (fadeType == FadeType.FADE_OUT)
+        if(source == null)
+        {
+            Debug.LogError("ERROR: Must provide a source to stop playing");
+        }
+        if (fadeOutEnabled)
         {
             StartFadeOut(source, fadeTime);
-        }
-        else if (fadeType == FadeType.FADE_IN || fadeType == FadeType.CROSS_FADE)
-        {
-            Debug.LogError("ERROR: Stop only supports FADE_IN and NONE for fadeType");
         }
         else
         {
@@ -218,7 +216,7 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator DuckAudio(AudioSource source, float duckVolumePercent, float duckDuration, float fadeTime)
     {
-        if (source == null || !source.isPlaying)
+        if (!source.isPlaying)
         {
             yield break;
         }
@@ -262,12 +260,6 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator FadeIn(AudioSource source, AudioClip clipToFadeIn, float fadeDuration)
     {
-        if(clipToFadeIn == null)
-        {
-            Debug.LogError("ERROR: no clip to fade in");
-        }
-        //If a song is currently playing stop it. 
-        //NOTE: if you want to slowly fade out that song then use CrossFade instead of FadeIn
         source.Stop();
 
         float initialVolume = SettingsUtils.GetMasterVolume() / 3;
@@ -296,11 +288,6 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator FadeOut(AudioSource source, float fadeOutDuration)
     {
-        if(source.clip == null)
-        {
-            Debug.LogError("ERROR: no clip to fade out");
-        }
-
         for(float t = 0; t < fadeOutDuration; t+= Time.deltaTime)
         {
             source.volume = Mathf.Lerp(SettingsUtils.GetMasterVolume() / 3, 0f, t / fadeOutDuration);
@@ -322,12 +309,6 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator CrossFade(AudioClip fadeInClip, float fadeDuration)
     {
-        if (fadeInClip == null)
-        {
-            Debug.LogError("CrossFade: No clip provided.");
-            yield break;
-        }
-
         AudioSource fromSource = musicSource;
         AudioSource toSource = fadeSource;
 
