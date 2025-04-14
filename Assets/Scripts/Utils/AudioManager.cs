@@ -51,15 +51,15 @@ public class AudioManager : MonoBehaviour
         UpdateVolume(SettingsUtils.GetMasterVolume());
     }
 
-    //============================ Utility ==============================
+    //==================== Utility ====================
     public bool IsClipPlaying(AudioSource source, AudioClip clip)
     {
         return source.isPlaying && source.clip == clip;
     }
 
-    public void PlayMusic(AudioClip clip)
+    public void PlayMusic(AudioClip clip, FadeType fadeType = FadeType.None, float fadeTime = 2f, bool isDucking = false)
     {
-        Play(musicSource, clip);
+        Play(musicSource, clip, fadeType, fadeTime, isDucking);
     }
 
     public void Play(AudioSource source, AudioClip clip, FadeType fadeType = FadeType.None, float fadeTime = 2f, bool isDucking = false)
@@ -107,7 +107,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    //================================ UI =================================
+    //==================== UI ====================
     public void PlayButtonPressedClip()
     {
         sfxSource.clip = buttonPressClip;
@@ -132,7 +132,7 @@ public class AudioManager : MonoBehaviour
         sfxSource.Play();
     }
 
-    //================================ Interaction =============================
+    //==================== Interaction ====================
     public void PlayDoorOpenClip()
     {
         sfxSource.clip = doorOpenClip;
@@ -177,8 +177,8 @@ public class AudioManager : MonoBehaviour
         sfxSource.Play();
     }
 
-    //================================ Music ==============================================
-    
+    //==================== Music ====================
+
     public void PlayDreamStartClip()
     {
         musicSource.clip = dreamStartClip;
@@ -247,7 +247,7 @@ public class AudioManager : MonoBehaviour
         currentCoroutine = null;
     }
 
-    //==================== Fading ==================
+    //==================== Fading ====================
 
     private void StartFadeIn(AudioSource source, AudioClip clip, float duration)
     {
