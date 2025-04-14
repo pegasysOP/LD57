@@ -64,8 +64,16 @@ public class AudioManager : MonoBehaviour
         Play(musicSource, clip);
     }
 
-    public void Play(AudioSource source, AudioClip clip, FadeType fadeType = FadeType.NONE, float fadeTime = 2f)
+    public void Play(AudioSource source, AudioClip clip, FadeType fadeType = FadeType.NONE, float fadeTime = 2f, bool isDucking = false)
     {
+        if (isDucking)
+        {
+            if(fadeType != FadeType.NONE)
+            {
+                Debug.LogError("ERROR: Simultaneously ducking and fading is not supported!");
+            }
+            StartDuckAudio(source);
+        }
         if (fadeType == FadeType.FADE_IN)
         {
             StartFadeIn(source, clip, fadeTime);
@@ -198,9 +206,52 @@ public class AudioManager : MonoBehaviour
        
     }
 
+    private void StartDuckAudio(AudioSource sourceToDuck, float duckVolumePercent = 0.3f, float duckDuration = 2f, float fadeTime = 0.5f)
+    {
+        if (currentCoroutine != null)
+        {
+            StopCoroutine(currentCoroutine);
+        }
+
+        currentCoroutine = StartCoroutine(DuckAudio(sourceToDuck, duckVolumePercent, duckDuration, fadeTime));
+    }
+
+    private IEnumerator DuckAudio(AudioSource source, float duckVolumePercent, float duckDuration, float fadeTime)
+    {
+        if (source == null || !source.isPlaying)
+        {
+            yield break;
+        }
+
+        float originalVolume = SettingsUtils.GetMasterVolume() / 3;
+        float duckVolume = originalVolume * duckVolumePercent;
+
+        for (float t = 0; t < fadeTime; t += Time.deltaTime)
+        {
+            float normalized = t / fadeTime;
+            source.volume = Mathf.Lerp(originalVolume, duckVolume, normalized);
+            yield return null;
+        }
+
+        source.volume = duckVolume;
+
+        yield return new WaitForSeconds(duckDuration);
+
+        for (float t = 0; t < fadeTime; t += Time.deltaTime)
+        {
+            float normalized = t / fadeTime;
+            source.volume = Mathf.Lerp(duckVolume, originalVolume, normalized);
+            yield return null;
+        }
+
+        source.volume = originalVolume;
+
+        currentCoroutine = null;
+    }
+
     //==================== Fading ==================
 
-    public void StartFadeIn(AudioSource source, AudioClip clip, float duration)
+    private void StartFadeIn(AudioSource source, AudioClip clip, float duration)
     {
         if (currentCoroutine != null)
         {
@@ -234,7 +285,7 @@ public class AudioManager : MonoBehaviour
         //source.volume = Mathf.Lerp(0, SettingsUtils.GetMasterVolume(), fadeDuration);
     }
 
-    public void StartFadeOut(AudioSource source, float duration)
+    private void StartFadeOut(AudioSource source, float duration)
     {
         if (currentCoroutine != null)
         {
@@ -260,7 +311,7 @@ public class AudioManager : MonoBehaviour
         source.Stop();
     }
 
-    public void StartCrossFade(AudioClip clipToFadeIn, float fadeOutDuration)
+    private void StartCrossFade(AudioClip clipToFadeIn, float fadeOutDuration)
     {
         if (currentCoroutine != null)
         {
@@ -318,7 +369,7 @@ public class AudioManager : MonoBehaviour
         toSource.volume = toTargetVolume;
 
         // Swap roles after fade completes
-        var temp = musicSource;
+        AudioSource temp = musicSource;
         musicSource = fadeSource;
         fadeSource = temp;
 
