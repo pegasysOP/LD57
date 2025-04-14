@@ -71,7 +71,7 @@ public class ManyDoorsContainer : MonoBehaviour
     {
         float timer = 0f;
 
-        AudioManager.Instance.StartFadeOut(AudioManager.Instance.musicSource, 1f);
+        AudioManager.Instance.Stop(AudioManager.Instance.musicSource, AudioManager.FadeType.FADE_OUT, 1f);
 
         // Make sure the fade overlay is visible
         GameManager.Instance.hud.fadeToBlack.alpha = 0f;
