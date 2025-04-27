@@ -91,7 +91,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void Stop(AudioSource source, bool fadeOutEnabled, float fadeTime = 2f)
+    public void Stop(AudioSource source, bool fadeOutEnabled = false, float fadeTime = 2f)
     {
         if(source == null)
         {
@@ -162,13 +162,18 @@ public class AudioManager : MonoBehaviour
 
     public void PlayFootstep()
     {
-        if (sfxSource == null || footsteps == null || footsteps.Count == 0)
-            return;
+        PlaySfxWithPitchShifting(footsteps);
+    }
 
-        int step = Random.Range(0, footsteps.Count);
-        sfxSource.clip = footsteps[step];
-        sfxSource.pitch = Random.Range(0.8f, 1.2f);
-        sfxSource.PlayOneShot(footsteps[step]);
+    public void PlaySfxWithPitchShifting(List<AudioClip> clips, float minPitch = 0.8f, float maxPitch = 1.2f)
+    {
+        if (sfxSource == null || clips == null || clips.Count == 0)
+            Debug.LogError("ERROR: there are no sounds to pitch shift!");
+
+        int index = Random.Range(0, clips.Count);
+        sfxSource.clip = clips[index];
+        sfxSource.pitch = Random.Range(minPitch, maxPitch);
+        sfxSource.PlayOneShot(sfxSource.clip);
     }
 
     public void PlayCorrectDoorClip()
