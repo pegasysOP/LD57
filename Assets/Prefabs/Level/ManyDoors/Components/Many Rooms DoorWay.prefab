@@ -175,3 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 2827379018580570718}
+  DoorOpened:
+    m_PersistentCalls:
+      m_Calls: []
+  isFinalDoor: 0
+  dreamClip: {fileID: 8300000, guid: 142d6d3bc6df3284681dfee4af0b514f, type: 3}

@@ -20,10 +20,16 @@ public class MusicTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        AudioManager.Instance.PlayMusic(audioClip);
-        this.gameObject.SetActive(false);
+        Debug.Log("On Trigger Enter - " + audioClip.name);
+        //If we are alerady playing the correct song then don't retrigger this
+        if (AudioManager.Instance.musicSource.clip != audioClip || AudioManager.Instance.fadeSource.clip != audioClip)
+        {
+            AudioManager.Instance.PlayMusic(audioClip, AudioManager.FadeType.CrossFade, 1.5f);
+        }
 
-        if(prefabsToDisable != null && prefabsToDisable.Length != 0)
+        Debug.Log("On Trigger Enter after cross fade- " + audioClip.name);
+
+        if (prefabsToDisable != null && prefabsToDisable.Length != 0)
         {
             foreach(GameObject trigger in prefabsToDisable)
             {

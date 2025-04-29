@@ -2720,6 +2720,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 360829401186777023, guid: 73d764d2f25d9594fac082474a10dccf, type: 3}
+      propertyPath: fadeSource
+      value: 
+      objectReference: {fileID: 134088819}
+    - target: {fileID: 360829401186777023, guid: 73d764d2f25d9594fac082474a10dccf, type: 3}
       propertyPath: bubbleSource
       value: 
       objectReference: {fileID: 402554851}
@@ -2772,6 +2776,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73d764d2f25d9594fac082474a10dccf, type: 3}
+--- !u!82 &134088819 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2908441729458883523, guid: 73d764d2f25d9594fac082474a10dccf, type: 3}
+  m_PrefabInstance: {fileID: 134088818}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &136991420
 GameObject:
   m_ObjectHideFlags: 0
@@ -35549,8 +35558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000e300e1b8d45c459d17f65959e083b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabsToDisable:
-  - {fileID: 2017552669}
+  prefabsToDisable: []
   audioClip: {fileID: 8300000, guid: 16677752b26fdc948bd84e81551e5348, type: 3}
 --- !u!65 &2017552671
 BoxCollider:

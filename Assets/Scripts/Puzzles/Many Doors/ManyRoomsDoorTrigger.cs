@@ -25,7 +25,7 @@ public class ManyRoomsDoorTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             counter++;
-            if (counter >= 2)
+            if (counter == 3)
                 LimitReached?.Invoke();
 
             trigger.enabled = false;

@@ -21,7 +21,7 @@ public class KeyDoor : Door
                 hasKey = false;
                 if(horseClip != null)
                 {
-                    AudioManager.Instance.PlayMusic(horseClip);
+                    AudioManager.Instance.PlayMusic(horseClip, AudioManager.FadeType.CrossFade, 1.5f);
                 }
             }
             else
