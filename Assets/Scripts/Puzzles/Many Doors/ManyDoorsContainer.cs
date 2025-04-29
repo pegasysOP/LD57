@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ManyDoorsContainer : MonoBehaviour
@@ -17,6 +18,8 @@ public class ManyDoorsContainer : MonoBehaviour
 
     private bool limitReached = false;
 
+    public AudioClip finalDoorClip;
+
     private void Awake()
     {
         teleporter.Teleported.AddListener(OnTeleported);
@@ -25,6 +28,7 @@ public class ManyDoorsContainer : MonoBehaviour
         foreach (ManyDoorsDoorway doorway in exitDoorways)
         {
             doorway.DoorOpened.AddListener(OnDoorOpened);
+           
         }
     }
 
@@ -42,16 +46,31 @@ public class ManyDoorsContainer : MonoBehaviour
     private void OnLimitReached()
     {
         limitReached = true;
+
+        //Select one of the doors at random to be the winning door 
+
+        ManyDoorsDoorway door = exitDoorways[UnityEngine.Random.Range(0, exitDoorways.Count)];
+        door.isFinalDoor = true;
+        AudioSource source = door.AddComponent<AudioSource>();
+        source.clip = finalDoorClip;
+        source.playOnAwake = false;
+        source.spatialBlend = 1;
     }
 
     private void OnDoorOpened(ManyDoorsDoorway selectedDoorway)
     {
-        if (limitReached)
+        if (limitReached && selectedDoorway.isFinalDoor)
         {
+            MoveRoom(selectedDoorway);
             StartCoroutine(FadeToBlack());
             return;
         }
+        MoveRoom(selectedDoorway);
 
+    }
+
+    public void MoveRoom(ManyDoorsDoorway selectedDoorway)
+    {
         // move rooms
         Vector3 aheadRoomPos = aheadRoom.transform.localPosition - mainRoom.transform.localPosition;
         aheadRoomPos.z = mainRoom.transform.localPosition.z + selectedDoorway.transform.localPosition.z;
@@ -60,7 +79,7 @@ public class ManyDoorsContainer : MonoBehaviour
         List<ManyDoorsDoorway> otherDoorways = new List<ManyDoorsDoorway>(exitDoorways);
         otherDoorways.Remove(selectedDoorway);
 
-        foreach(ManyDoorsDoorway doorway in otherDoorways)
+        foreach (ManyDoorsDoorway doorway in otherDoorways)
             doorway.door.InstantClose();
 
 

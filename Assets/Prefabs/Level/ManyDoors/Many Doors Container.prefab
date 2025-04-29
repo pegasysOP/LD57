@@ -463,6 +463,7 @@ MonoBehaviour:
   - {fileID: 2316895915775712874}
   - {fileID: 102385369076670717}
   - {fileID: 6577597329483087956}
+  finalDoorClip: {fileID: 8300000, guid: 142d6d3bc6df3284681dfee4af0b514f, type: 3}
 --- !u!1001 &5719283128119896619
 PrefabInstance:
   m_ObjectHideFlags: 0
