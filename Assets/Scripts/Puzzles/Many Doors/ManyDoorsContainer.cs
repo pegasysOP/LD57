@@ -18,7 +18,6 @@ public class ManyDoorsContainer : MonoBehaviour
 
     private bool limitReached = false;
 
-    public AudioClip finalDoorClip;
 
     private void Awake()
     {
@@ -52,7 +51,6 @@ public class ManyDoorsContainer : MonoBehaviour
         ManyDoorsDoorway door = exitDoorways[UnityEngine.Random.Range(0, exitDoorways.Count)];
         door.isFinalDoor = true;
         AudioSource source = door.AddComponent<AudioSource>();
-        source.clip = finalDoorClip;
         source.playOnAwake = false;
         source.spatialBlend = 1;
     }
