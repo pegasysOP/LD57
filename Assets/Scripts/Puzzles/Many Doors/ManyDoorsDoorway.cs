@@ -11,6 +11,8 @@ public class ManyDoorsDoorway : MonoBehaviour
 
     public bool isFinalDoor = false;
 
+    public AudioClip dreamClip;
+
 
     private void Awake()
     {
@@ -22,17 +24,13 @@ public class ManyDoorsDoorway : MonoBehaviour
         InvokeRepeating(nameof(playSound), 0, 5);
     }
 
-    private void Update()
-    {
-        
-    }
 
     private void playSound()
     {
         if (isFinalDoor)
         {
             AudioSource source = this.gameObject.GetComponent<AudioSource>();
-            source.PlayOneShot(source.clip);
+            source.PlayOneShot(dreamClip);
         }
     }
 
