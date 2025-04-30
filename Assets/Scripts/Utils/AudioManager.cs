@@ -49,6 +49,7 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         PlayDreamStartClip();
         UpdateVolume(SettingsUtils.GetMasterVolume());
+        UpdateSfxVolume(SettingsUtils.GetSfxVolume());
     }
 
     //==================== Utility ====================
@@ -200,13 +201,16 @@ public class AudioManager : MonoBehaviour
     public void UpdateVolume(float value)
     {
         musicSource.volume = value / 3;
-        fadeSource.volume = value / 3;
+        fadeSource.volume = value / 3;    
+    }
+
+    public void UpdateSfxVolume(float value)
+    {
         sfxSource.volume = value;
-        if(bubbleSource != null)
+        if (bubbleSource != null)
         {
-             bubbleSource.volume = value;
+            bubbleSource.volume = value;
         }
-       
     }
 
     private void StartDuckAudio(AudioSource sourceToDuck, float duckVolumePercent = 0.3f, float duckDuration = 2f, float fadeTime = 0.5f)

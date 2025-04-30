@@ -6,12 +6,14 @@ public class PauseMenu : MonoBehaviour
     public Button resumeButton;
     public Slider sensitivitySlider;
     public Slider volumeSlider;
+    public Slider sfxSlider;
     public Button quitButton;
 
     private void Awake()
     {
         sensitivitySlider.value = SettingsUtils.GetSensitivity();
         volumeSlider.value = SettingsUtils.GetMasterVolume();
+        sfxSlider.value = SettingsUtils.GetSfxVolume();
     }
 
     private void OnEnable()
@@ -19,6 +21,7 @@ public class PauseMenu : MonoBehaviour
         resumeButton.onClick.AddListener(OnResumeButtonClick);
         sensitivitySlider.onValueChanged.AddListener(OnSensitivityValueChanged);
         volumeSlider.onValueChanged.AddListener(OnVolumeValueChanged);
+        sfxSlider.onValueChanged.AddListener(OnSfxValueChanged);
         quitButton.onClick.AddListener(OnQuitButtonClick);
         AudioManager.Instance.PauseMenuOpenClip();
     }
@@ -28,6 +31,7 @@ public class PauseMenu : MonoBehaviour
         resumeButton.onClick.RemoveListener(OnResumeButtonClick);
         sensitivitySlider.onValueChanged.RemoveListener(OnSensitivityValueChanged);
         volumeSlider.onValueChanged.RemoveListener(OnVolumeValueChanged);
+        sfxSlider.onValueChanged.RemoveListener(OnSfxValueChanged);
         quitButton.onClick.RemoveListener(OnQuitButtonClick);
         AudioManager.Instance.PauseMenuClosedClip();
     }
@@ -63,9 +67,21 @@ public class PauseMenu : MonoBehaviour
         GameManager.Instance?.audioManager?.UpdateVolume(newValue);
     }
 
+    private void OnSfxValueChanged(float newValue)
+    {
+        SaveSfxVolume(newValue);
+
+        GameManager.Instance?.audioManager?.UpdateSfxVolume(newValue);
+    }
+
     private void SaveNewVolume(float newValue)
     {
         SettingsUtils.SetMasterVolume(newValue);
+    }
+
+    private void SaveSfxVolume(float newValue)
+    {
+        SettingsUtils.SetSfxVolume(newValue);
     }
 
     private void OnResumeButtonClick()
