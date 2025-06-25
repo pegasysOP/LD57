@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,7 +12,7 @@ public class ManyDoorsDoorway : MonoBehaviour
 
     public bool isFinalDoor = false;
 
-    public AudioClip dreamClip;
+    public AudioClip[] dreamClips;
 
 
     private void Awake()
@@ -30,7 +31,8 @@ public class ManyDoorsDoorway : MonoBehaviour
         if (isFinalDoor)
         {
             AudioSource source = this.gameObject.GetComponent<AudioSource>();
-            source.PlayOneShot(dreamClip);
+            int rand = UnityEngine.Random.Range(0, dreamClips.Length);
+            source.PlayOneShot(dreamClips[rand]);
         }
     }
 
