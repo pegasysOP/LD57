@@ -179,4 +179,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isFinalDoor: 0
-  dreamClip: {fileID: 8300000, guid: 142d6d3bc6df3284681dfee4af0b514f, type: 3}
+  dreamClips:
+  - {fileID: 8300000, guid: 142d6d3bc6df3284681dfee4af0b514f, type: 3}
+  - {fileID: 8300000, guid: f5d3963ed12444e48965dfaffba56360, type: 3}
+  - {fileID: 8300000, guid: 3eb38ecb4d5760b4d9c2d4e165bad149, type: 3}
+  - {fileID: 8300000, guid: c6e890ec919961547a2d54e58b2a3e31, type: 3}
